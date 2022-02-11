@@ -2,9 +2,9 @@ server:
   port: 8088
 spring:
   datasource:
-    password: gab_orcl
-    username: gab_orcl
-    url: jdbc:oracle:thin:@172.30.5.160:1521:orcl
+    password: orcl
+    username: orcl
+    url: jdbc:oracle:thin:@172.30.5.99:1521:oracle
     type: com.alibaba.druid.pool.DruidDataSource
     name: oracle
     driver-class-name: oracle.jdbc.OracleDriver
