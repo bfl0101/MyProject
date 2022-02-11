@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhidao.kstb.dao.KSTB_CLXXDao">
+  <resultMap id="BaseResultMap" type="com.zhidao.kstb.model.tabc.KSTB_CLXXC">
+    <result column="YWXTBH" jdbcType="VARCHAR" property="ywxtbh" />
+    <result column="SXH" jdbcType="NUMERIC" property="sxh" />
+    <result column="CLLBDM" jdbcType="VARCHAR" property="cllbdm" />
+    <result column="CLMC" jdbcType="VARCHAR" property="clmc" />
+    <result column="CLGS" jdbcType="VARCHAR" property="clgs" />
+    <result column="ID" jdbcType="VARCHAR" property="id" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.zhidao.kstb.model.tabc.KSTB_CLXXC">
+    <result column="CLNR" jdbcType="CLOB" property="clnr" />
+  </resultMap>
+  <sql id="Blob_Column_List">
+    CLNR
+  </sql>
+  <insert id="insert" parameterType="com.zhidao.kstb.model.tabc.KSTB_CLXXC">
+    insert into KSTB_CLXX (YWXTBH, SXH, CLLBDM, 
+      CLMC, CLGS, ID, CLNR
+      )
+    values (#{ywxtbh,jdbcType=VARCHAR}, #{sxh,jdbcType=NUMERIC}, #{cllbdm,jdbcType=VARCHAR}, 
+      #{clmc,jdbcType=VARCHAR}, #{clgs,jdbcType=VARCHAR}, #{id,jdbcType=VARCHAR}, #{clnr,jdbcType=CLOB}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhidao.kstb.model.tabc.KSTB_CLXXC">
+    insert into KSTB_CLXX
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ywxtbh != null">
+        YWXTBH,
+      </if>
+      <if test="sxh != null">
+        SXH,
+      </if>
+      <if test="cllbdm != null">
+        CLLBDM,
+      </if>
+      <if test="clmc != null">
+        CLMC,
+      </if>
+      <if test="clgs != null">
+        CLGS,
+      </if>
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="clnr != null">
+        CLNR,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ywxtbh != null">
+        #{ywxtbh,jdbcType=VARCHAR},
+      </if>
+      <if test="sxh != null">
+        #{sxh,jdbcType=NUMERIC},
+      </if>
+      <if test="cllbdm != null">
+        #{cllbdm,jdbcType=VARCHAR},
+      </if>
+      <if test="clmc != null">
+        #{clmc,jdbcType=VARCHAR},
+      </if>
+      <if test="clgs != null">
+        #{clgs,jdbcType=VARCHAR},
+      </if>
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="clnr != null">
+        #{clnr,jdbcType=CLOB},
+      </if>
+    </trim>
+  </insert>
+</mapper>

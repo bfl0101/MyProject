@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--户口迁移Mybatis持久层映射-->
+<!-- 注：rsultMap中存在数据库字段与表字段不匹配的情况，原因：
+ 1.javaBean中封装的实例对象属性遵循Java的驼峰式命名法，而DBMS中单词与单词之间一般采用‘_’来分隔。
+ 2.在本项目中，对特定的数据标识做了两次，两次以上的整改，在显示效果能够满足的前提下，不需要修改所涉及到的属性。
+ 所以会有上述出现的问题。 -->
+<mapper namespace="com.zhidao.kstb.dao.HouseholdMigrationDao">
+	<!-- 申请迁出信息resultMap -->
+    <resultMap id="sqqcxxMap" type="com.zhidao.kstb.model.tab.KSTB_SQQCXX">
+        <result column="YWXTBH" property="ywxtbh"/>
+        <result column="YWLSH" property="ywlsh"/>
+        <result column="SQR_GMSFHM" property="sqrGmsfhm"/>
+        <result column="SQR_XM" property="sqrXm"/>
+        <result column="SQR_LXDH" property="sqrLxdh"/>
+        <result column="SQR_ZZ_SSXQDM" property="sqrZzSsxqdm"/>
+        <result column="SQR_ZZ_QHNXXDZ" property="sqrZzQhnxxdz"/>
+        <result column="QYR_GMSFHM" property="qyrGmsfhm"/>
+        <result column="QYR_XM" property="qyrXm"/>
+        <result column="QYR_XBDM" property="qyrXbDm"/>
+        <result column="QYR_MZDM" property="qyrMzDm"/>
+        <result column="QYR_CSRQ" property="qyrCsrq"/>
+        <result column="QYR_YSQRGX_JTGXDM" property="qyrYsqrgxJtgxdm"/>  
+        <result column="QYLDYYDM" property="qyldyydm"/>
+        <result column="QCD_SSXQDM" property="qcdSsxqdm"/>
+        <result column="QCD_QHNXXDZ" property="qcdQhnxxdz"/>
+        <result column="QCD_HKDJJG_GAJGDM" property="qcdHkdjjgGajgdm"/>
+        <result column="QCD_HKDJJG_GAJGMC" property="qcdHkdjjgGajgmc"/>
+        <result column="QRD_SSXQDM" property="qrdSsxqdm"/>
+        <result column="QRD_QHNXXDZ" property="qrdQhnxxdz"/>
+        <result column="QRD_HKDJJG_GAJGJGDM" property="qrdHkdjjgGajgdm"/>
+        <result column="QRD_HKDJJG_GAJGJGMC" property="qrdHkdjjgGajgmc"/>
+        <result column="ZQZBH" property="zqzbh"/>
+        <result column="QFJG_GAJGJGDM" property="qfjgGajgjgdm"/>
+        <result column="QFJG_GAJGMC" property="qfjgGajgmc"/>
+        <result column="CBR_XM" property="cbrXm"/>
+        <result column="QFRQ" property="qfRq"/>
+        <result column="BZ" property="Bz"/>
+        <result column="YXJZRQ" property="yxjzrq"/>
+        <result column="XTYW_QYFWDM" property="xtywQyfwdm"/>
+        <result column="SLDW_GAJGJGDM" property="sldwGajgjgdm"/>
+        <result column="SLDW_GAJGMC" property="sldwGajgmc"/>
+        <result column="SLDW_LXDH" property="sldwLxdh"/>
+        <result column="SLR_GMSFHM" property="slrGmsfhm"/>
+        <result column="SLR_XM" property="slrXm"/>
+        <result column="SLR_LXDH" property="slrLxdh"/>
+        <result column="SLSJ" property="slsj"/>
+        <result column="SJGSDWDM" property="sjgsdwdm"/>
+        <result column="SJGSDWMC" property="sjgsdwmc"/>
+        <result column="FSDW_SJGSDWDM" property="fsdwSjgsdwdm"/>
+        <result column="FSDW_SJGSDWMC" property="fsdwSjgsdwmc"/>
+        <result column="JSDW_SJGSDWDM" property="jsdwSjgsdwdm"/>
+        <result column="JSDW_SJGSDWMC" property="jsdwSjgsdwmc"/>
+    </resultMap>
+    <!-- 迁出反馈信息resultMap -->
+   	<resultMap id="qcfkMap" type="com.zhidao.kstb.model.tab.KSTB_QCFKXX">
+   		<result column="YWXTBH" property="ywxtbh"/>
+   		<result column="QYR_GMSFHM" property="qyrGmsfhm"/>
+   		<result column="QYR_XM" property="qyrXm"/>
+   		<result column="QYR_XBDM" property="qyrXbdm"/>
+   		<result column="QYR_MZDM" property="qyrMzDm"/>
+   		<result column="QYR_CSRQ" property="qyrCsrq"/>
+   		<result column="QYR_CYM" property="qyrCym"/>
+   		<result column="QYR_YCZRGX_JTGXDM" property="qyrYczrgxJtgxdm"/>
+   		<result column="QYR_XLDM" property="qyrXldm"/>
+   		<result column="QYR_HYZKDM" property="qyrHyzkdm"/>
+   		<result column="QYR_ZY" property="qyrZy"/>
+   		<result column="QYR_CSD_GJHDQDM" property="qyrCsdGjhdqdm"/>
+   		<result column="QYR_CSD_SSXQDM" property="qyrCsdSsxqdm"/>
+   		<result column="QYR_CSD_QHNXXDZ" property="qyrCsdQhnxxdz"/>
+   		<result column="QYR_JG_GJHDQDM" property="qyrJgGjhdqdm"/>
+   		<result column="QYR_JG_SSXQDM" property="qyrJgSsxqdm"/>
+   		<result column="QYR_JG_QHNXXDZ" property="qyrJgQhnxxdz"/>
+   		<result column="QYLDYYDM" property="qyldyydm"/>
+   		<result column="QYZBH" property="qyzBh"/>
+   		<result column="CZR_GMSFHM" property="czrGmsfhm"/>
+   		<result column="CZR_XM" property="czrXm"/>
+   		<result column="YZZ_SSXQDM" property="yzzSsxqdm"/>
+   		<result column="YZZ_QHNXXDZ" property="yzzQhnxxdz"/>
+   		<result column="YZZ_CXFLDM" property="yzzCxfldm"/>
+   		<result column="QWD_SSXQDM" property="qwdSsxqdm"/>
+   		<result column="QWD_QHNXXDZ" property="qwdQhnxxdz"/>
+   		<result column="QFJG_GAJGJGDM" property="qfjgGajgjgdm"/>
+   		<result column="QFJG_GAJGMC" property="qfjgGajgmc"/>
+   		<result column="QFRQ" property="qfRq"/>
+   		<result column="YXQJZRQ" property="yxqjzrq"/>
+   		<result column="CBR_XM" property="cbrXm"/>
+   		<result column="BZ" property="bz"/>
+   		<result column="ZQBH" property="zqbh"/>
+   		<result column="XTYW_QYFWDM" property="xtywQyfwdm"/>
+   		<result column="SLDW_GAJGJGDM" property="sldwGajgjgdm"/>
+   		<result column="SLDW_GAJGMC" property="sldwGajgmc"/>
+   		<result column="SLDW_LXDH" property="sldwLxdh"/>
+   		<result column="SLR_GMSFHM" property="slrGmsfhm"/>
+   		<result column="SLR_XM" property="slrXm"/>
+   		<result column="SLR_LXDH" property="slrLxdh"/>
+   		<result column="SLSJ" property="slsj"/>
+   		<result column="SJGSDWDM" property="sjgsdwdm"/>
+   		<result column="SJGSDWMC" property="sjgsdwmc"/>
+   		<result column="FSDW_SJGSDWDM" property="fsdwSjgsdwdm"/>
+   		<result column="FSDW_SJGSDWMC" property="fsdwSjgsdwmc"/>
+   		<result column="JSDW_SJGSDWDM" property="jsdwSjgsdwdm"/>
+   		<result column="JSDW_SJGSDWMC" property="jsdwSjgsdwmc"/>
+   	</resultMap>
+   	<!-- (不予)迁出反馈信息resultMap -->
+   	<resultMap id="byqcfkxxMap" type="com.zhidao.kstb.model.tab.KSTB_BYQCFKXX">
+   		<result column="YWXTBH" property="ywxtbh"/>
+   		<result column="YWLSH" property="ywlsh"/>
+   		<result column="SQR_GMSFHM" property="sqrGmsfhm"/>
+   		<result column="SQR_XM" property="sqrXm"/>
+   		<result column="BYQC_JYQK" property="byqcJyqk"/>
+   		<result column="BLDW_GAJGJGDM" property="bldwGajgjgdm"/>
+   		<result column="BLDW_GAJGMC" property="bldwGajamc"/>
+   		<result column="BLDW_LXDH" property="bldwLxdh"/>
+   		<result column="BLR_GMSFHM" property="blrGmsfhm"/>
+   		<result column="BLR_XM" property="blrXm"/>
+   		<result column="BLR_LXDH" property="blrLxdh"/>
+   		<result column="BLSJ" property="blsj"/>
+   		<result column="SJGSDWDM" property="sjgsdwdm"/>
+   		<result column="SJGSDWMC" property="sjgsdwmc"/>
+   		<result column="FSDW_SJGSDWDM" property="fsdwSjgsdwdm"/>
+   		<result column="FSDW_SJGSDWMC" property="fsdwSjgsdwmc"/>
+   		<result column="JSDW_SJGSDWDM" property="jsdwSjgsdwdm"/>
+   		<result column="JSDW_SJGSDWMC" property="jsdwSjgsdwmc"/>
+   		<result column="XTYW_QYFWDM" property="xtywQyfwdm"/>
+   	</resultMap>
+   	<!-- 材料信息resultMap -->
+   	<resultMap id="clxxMap" type="com.zhidao.kstb.model.tab.KSTB_CLXX">
+		<result column="YWXTBH" property="ywxtbh"/>
+		<result column="SXH" property="sxh"/> 
+		<result column="CLLBDM" property="cllbdm"/> 
+		<result column="CLMC" property="clmc"/> 
+		<result column="CLGS" property="clgs"/>   	
+		<result column="CLNR" property="clnr"/>
+		<result column="ID" property="id"/>
+   	</resultMap>
+    <!--保存申请迁出信息-->
+    <insert id="InsSQQCXX" parameterType="com.zhidao.kstb.model.tab.KSTB_SQQCXX">
+            INSERT
+            INTO
+            KSTB_SQQCXX(
+            YWXTBH,YWLSH,
+            SQR_GMSFHM,SQR_XM,
+            SQR_LXDH,SQR_ZZ_SSXQDM,
+            SQR_ZZ_QHNXXDZ,QYR_GMSFHM,
+            QYR_XM,QYR_XBDM,
+            QYR_MZDM,QYR_CSRQ,
+            QYR_YSQRGX_JTGXDM,QYLDYYDM,
+            QCD_SSXQDM,QCD_QHNXXDZ,
+            QCD_HKDJJG_GAJGDM,QCD_HKDJJG_GAJGMC,
+            QRD_SSXQDM,QRD_QHNXXDZ,
+            QRD_HKDJJG_GAJGJGDM,QRD_HKDJJG_GAJGJGMC,
+            ZQZBH,QFJG_GAJGJGDM,QFJG_GAJGMC,
+            CBR_XM,QFRQ,BZ,YXJZRQ,
+            XTYW_QYFWDM,SLDW_GAJGJGDM,
+            SLDW_GAJGMC,SLDW_LXDH,
+            SLR_GMSFHM,SLR_XM,SLR_LXDH,
+            SLSJ,SJGSDWDM,SJGSDWMC,
+            FSDW_SJGSDWDM,FSDW_SJGSDWMC,
+            JSDW_SJGSDWDM,JSDW_SJGSDWMC
+            )VALUES (
+            #{ywxtbh,jdbcType=VARCHAR},#{ywlsh,jdbcType=VARCHAR},
+            #{sqrGmsfhm,jdbcType=VARCHAR},#{sqrXm,jdbcType=VARCHAR},
+            #{sqrLxdh,jdbcType=VARCHAR},#{sqrZzSsxqdm,jdbcType=VARCHAR},
+            #{sqrZzQhnxxdz,jdbcType=VARCHAR},#{qyrGmsfhm,jdbcType=VARCHAR},
+            #{qyrXm,jdbcType=VARCHAR},#{qyrXbDm,jdbcType=VARCHAR},
+            #{qyrMzDm,jdbcType=VARCHAR},TO_DATE(#{qyrCsrq,jdbcType=VARCHAR},'yyyy-mm-dd'),
+            #{qyrYsqrgxJtgxdm,jdbcType=VARCHAR},#{qyldyydm,jdbcType=VARCHAR},
+            #{qcdSsxqdm,jdbcType=VARCHAR},#{qcdQhnxxdz,jdbcType=VARCHAR},
+            #{qcdHkdjjgGajgdm,jdbcType=VARCHAR},#{qcdHkdjjgGajgmc,jdbcType=VARCHAR},
+            #{qrdSsxqdm,jdbcType=VARCHAR},#{qrdQhnxxdz,jdbcType=VARCHAR},
+            #{qrdHkdjjgGajgdm,jdbcType=VARCHAR},#{qrdHkdjjgGajgmc,jdbcType=VARCHAR},
+            #{zqzbh,jdbcType=VARCHAR},#{qfjgGajgjgdm,jdbcType=VARCHAR},
+            #{qfjgGajgmc,jdbcType=VARCHAR},#{cbrXm,jdbcType=VARCHAR},
+            TO_DATE(#{qfRq,jdbcType=VARCHAR},'yyyy-mm-dd'),#{Bz,jdbcType=VARCHAR},TO_DATE(#{yxjzrq,jdbcType=VARCHAR},'yyyy-mm-dd'),
+            #{xtywQyfwdm,jdbcType=VARCHAR},#{sldwGajgjgdm,jdbcType=VARCHAR},
+            #{sldwGajgmc,jdbcType=VARCHAR},#{sldwLxdh,jdbcType=VARCHAR},
+            #{slrGmsfhm,jdbcType=VARCHAR},#{slrXm,jdbcType=VARCHAR},
+            #{slrLxdh,jdbcType=VARCHAR},TO_DATE(#{slsj,jdbcType=VARCHAR},'yyyy-mm-dd HH24:MI:SS'),
+            #{sjgsdwdm,jdbcType=VARCHAR},#{sjgsdwmc,jdbcType=VARCHAR},
+            #{fsdwSjgsdwdm,jdbcType=VARCHAR},#{fsdwSjgsdwmc,jdbcType=VARCHAR},
+            #{jsdwSjgsdwdm,jdbcType=VARCHAR},#{jsdwSjgsdwmc,jdbcType=VARCHAR})
+    </insert>
+    <!--批量保存材料信息-->
+    <insert id="InsCLXX" parameterType="com.zhidao.kstb.model.tab.KSTB_CLXX">
+        INSERT
+        INTO
+        KSTB_CLXX(
+        YWXTBH,SXH,
+        CLLBDM,CLMC,
+        CLGS,CLNR,
+        ID
+        )VALUES(
+        #{ywxybh,jdbcType=VARCHAR},
+        #{sxh,jdbcType=VARCHAR},
+        #{cllbdm,jdbcType=VARCHAR},
+        #{clmc,jdbcType=VARCHAR},
+        #{clgs,jdbcType=VARCHAR},
+        #{clnr,jdbcType=VARCHAR},
+        #{id,jdbcType=VARCHAR})
+    </insert>
+    <!-- 添加迁出反馈信息 -->
+    <insert id="InsQCFKXX" parameterType="com.zhidao.kstb.model.tab.KSTB_QCFKXX">
+    	INSERT
+    	INTO
+    	KSTB_QCFKXX(
+    	YWXTBH,QYR_GMSFHM,QYR_XM,
+    	QYR_XBDM,QYR_MZDM,QYR_CSRQ,
+    	QYR_CYM,QYR_YCZRGX_JTGXDM,QYR_XLDM,
+    	QYR_HYZKDM,QYR_ZY,QYR_CSD_GJHDQDM,
+    	QYR_CSD_SSXQDM,QYR_CSD_QHNXXDZ,
+    	QYR_JG_GJHDQDM,QYR_JG_SSXQDM,
+    	QYR_JG_QHNXXDZ,QYLDYYDM,QYZBH,
+    	CZR_GMSFHM,CZR_XM,YZZ_SSXQDM,
+    	YZZ_QHNXXDZ,YZZ_CXFLDM,QWD_SSXQDM,
+    	QWD_QHNXXDZ,QFJG_GAJGJGDM,QFJG_GAJGMC,
+    	QFRQ,YXQJZRQ,CBR_XM,BZ,ZQBH,XTYW_QYFWDM,
+    	SLDW_GAJGJGDM,SLDW_GAJGMC,SLDW_LXDH,
+    	SLR_GMSFHM,SLR_XM,SLR_LXDH,SLSJ,SJGSDWDM,
+    	SJGSDWMC,FSDW_SJGSDWDM,FSDW_SJGSDWMC,
+    	JSDW_SJGSDWDM,JSDW_SJGSDWMC
+    	)VALUES(
+    	#{ywxtbh,jdbcType=VARCHAR},
+    	#{qyrGmsfhm,jdbcType=VARCHAR},#{qyrXm,jdbcType=VARCHAR},
+    	#{qyrXbdm,jdbcType=VARCHAR},#{qyrMzDm,jdbcType=VARCHAR},
+    	TO_DATE(#{qyrCsrq,jdbcType=VARCHAR},'yyyy-mm-dd'),
+    	#{qyrCym,jdbcType=VARCHAR},
+    	#{qyrYczrgxJtgxdm,jdbcType=VARCHAR},#{qyrXldm,jdbcType=VARCHAR},
+    	#{qyrHyzkdm,jdbcType=VARCHAR},#{qyrZy,jdbcType=VARCHAR},
+    	#{qyrCsdGjhdqdm,jdbcType=VARCHAR},#{qyrCsdSsxqdm,jdbcType=VARCHAR},
+    	#{qyrCsdQhnxxdz,jdbcType=VARCHAR},#{qyrJgGjhdqdm,jdbcType=VARCHAR},
+    	#{qyrJgSsxqdm,jdbcType=VARCHAR},#{qyrJgQhnxxdz,jdbcType=VARCHAR},
+    	#{qyldyydm,jdbcType=VARCHAR},#{qyzBh,jdbcType=VARCHAR},
+    	#{czrGmsfhm,jdbcType=VARCHAR},#{czrXm,jdbcType=VARCHAR},
+    	#{yzzSsxqdm,jdbcType=VARCHAR},#{yzzQhnxxdz,jdbcType=VARCHAR},
+    	#{yzzCxfldm,jdbcType=VARCHAR},
+    	#{qwdSsxqdm,jdbcType=VARCHAR},#{qwdQhnxxdz,jdbcType=VARCHAR},
+    	#{qfjgGajgjgdm,jdbcType=VARCHAR},#{qfjgGajgmc,jdbcType=VARCHAR},
+    	TO_DATE(#{qfRq,jdbcType=VARCHAR},'yyyy-mm-dd'),
+    	TO_DATE(#{yxqjzrq,jdbcType=VARCHAR},'yyyy-mm-dd'),
+    	#{cbrXm,jdbcType=VARCHAR},
+    	#{bz,jdbcType=VARCHAR},#{zqbh,jdbcType=VARCHAR},
+    	#{xtywQyfwdm,jdbcType=VARCHAR},
+    	#{sldwGajgjgdm,jdbcType=VARCHAR},#{sldwGajgmc,jdbcType=VARCHAR},
+    	#{sldwLxdh,jdbcType=VARCHAR},#{slrGmsfhm,jdbcType=VARCHAR},
+    	#{slrXm,jdbcType=VARCHAR},#{slrLxdh,jdbcType=VARCHAR},
+    	TO_DATE(#{slsj,jdbcType=VARCHAR},'yyyy-mm-dd HH24:MI:SS'),
+    	#{sjgsdwdm,jdbcType=VARCHAR},#{sjgsdwmc,jdbcType=VARCHAR},
+    	#{fsdwSjgsdwdm,jdbcType=VARCHAR},#{fsdwSjgsdwmc,jdbcType=VARCHAR},
+        #{jsdwSjgsdwdm,jdbcType=VARCHAR},#{jsdwSjgsdwmc,jdbcType=VARCHAR})
+    </insert>
+    <!-- 添加不予迁出反馈信息 -->
+    <insert id="InsBYQCFKXX" parameterType="com.zhidao.kstb.model.tab.KSTB_BYQCFKXX">
+    	INSERT
+    	INTO
+    	KSTB_BYQCFKXX(
+    	YWXTBH,YWLSH,
+    	SQR_GMSFHM,SQR_XM,
+    	BYQC_JYQK,XTYW_QYFWDM,
+    	BLDW_GAJGJGDM,
+    	BLDW_GAJGMC,BLDW_LXDH,
+    	BLR_GMSFHM,BLR_XM,BLR_LXDH,
+    	BLSJ,SJGSDWDM,SJGSDWMC,
+    	FSDW_SJGSDWDM,FSDW_SJGSDWMC,
+    	JSDW_SJGSDWDM,JSDW_SJGSDWMC
+    	)VALUES(
+    	#{ywxtbh,jdbcType=VARCHAR},#{ywlsh,jdbcType=VARCHAR},
+    	#{sqrGmsfhm,jdbcType=VARCHAR},#{sqrXm,jdbcType=VARCHAR},
+    	#{byqcJyqk,jdbcType=VARCHAR},#{xtywQyfwdm,jdbcType=VARCHAR},
+    	#{bldwGajgjgdm,jdbcType=VARCHAR},
+    	#{bldwGajamc,jdbcType=VARCHAR},#{bldwLxdh,jdbcType=VARCHAR},
+    	#{blrGmsfhm,jdbcType=VARCHAR},#{blrXm,jdbcType=VARCHAR},
+    	#{blrLxdh,jdbcType=VARCHAR},TO_DATE(#{blsj,jdbcType=VARCHAR},'yyyy-mm-dd HH24:MI:SS'),
+    	#{sjgsdwdm,jdbcType=VARCHAR},#{sjgsdwmc,jdbcType=VARCHAR},
+    	#{fsdwSjgsdwdm,jdbcType=VARCHAR},#{fsdwSjgsdwmc,jdbcType=VARCHAR},
+    	#{jsdwSjgsdwdm,jdbcType=VARCHAR},#{jsdwSjgsdwmc,jdbcType=VARCHAR})
+    </insert>
+
+</mapper>

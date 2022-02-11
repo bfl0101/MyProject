@@ -1,0 +1,23 @@
+server:
+  port: 8088
+spring:
+  datasource:
+    password: gab_orcl
+    username: gab_orcl
+    url: jdbc:oracle:thin:@172.30.5.160:1521:orcl
+    type: com.alibaba.druid.pool.DruidDataSource
+    name: oracle
+    driver-class-name: oracle.jdbc.OracleDriver
+    initialSize: 50
+    maxActive: 100
+    poolPreparedStatements: true
+  jackson:
+    default-property-inclusion: NON_NULL
+mybatis:
+  mapper-locations: classpath:/mappers/*.xml
+  type-aliases-package: com.zhidao.kstb.model.*
+logging:
+  config: classpath:logback-spring.xml
+  charset: utf-8
+  level:
+    com.zhidao.kstb.*: trace

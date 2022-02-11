@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhidao.kstb.shqffkjs.dao.Zwqd_zwsjxxDao">
+  <resultMap id="BaseResultMap" type="com.zhidao.kstb.shqffkjs.model.Zwqd_zwsjxx">
+    <id column="XLH" jdbcType="NUMERIC" property="XLH" />
+    <result column="DQM" jdbcType="VARCHAR" property="DQM" />
+    <result column="JMSFZSLH" jdbcType="VARCHAR" property="JMSFZSLH" />
+    <result column="GMSFHM" jdbcType="VARCHAR" property="GMSFHM" />
+    <result column="XM" jdbcType="NVARCHAR" property="XM" />
+    <result column="ZWCJJG" jdbcType="VARCHAR" property="ZWCJJG" />
+    <result column="ZWY_ZCJG" jdbcType="VARCHAR" property="ZWY_ZCJG" />
+    <result column="ZWY_ZW" jdbcType="VARCHAR" property="ZWY_ZW" />
+    <result column="ZWY_TXZLZ" jdbcType="VARCHAR" property="ZWY_TXZLZ" />
+    <result column="ZWE_ZCJG" jdbcType="VARCHAR" property="ZWE_ZCJG" />
+    <result column="ZWE_ZW" jdbcType="VARCHAR" property="ZWE_ZW" />
+    <result column="ZWE_TXZLZ" jdbcType="VARCHAR" property="ZWE_TXZLZ" />
+    <result column="ZWCJQID" jdbcType="VARCHAR" property="ZWCJQID" />
+    <result column="CJDW_GAJGJGDM" jdbcType="VARCHAR" property="CJDW_GAJGJGDM" />
+    <result column="CJDW_GAJGMC" jdbcType="NVARCHAR" property="CJDW_GAJGMC" />
+    <result column="CJR_XM" jdbcType="NVARCHAR" property="CJR_XM" />
+    <result column="CJSJ" jdbcType="VARCHAR" property="CJSJ" />
+    <result column="SJGSDWDM" jdbcType="VARCHAR" property="SJGSDWDM" />
+    <result column="SJGSDWMC" jdbcType="NVARCHAR" property="SJGSDWMC" />
+    <result column="CJZDIP" jdbcType="VARCHAR" property="CJZDIP" />
+    <result column="SJSCBS" jdbcType="VARCHAR" property="SJSCBS" />
+    <result column="SJSCSJ" jdbcType="VARCHAR" property="SJSCSJ" />
+    <result column="ERRCODE" jdbcType="VARCHAR" property="ERRCODE" />
+    <result column="ERRMSG" jdbcType="NVARCHAR" property="ERRMSG" />
+    <result column="SCSJBBH" jdbcType="VARCHAR" property="SCSJBBH" />
+    <result column="BXLH" jdbcType="NUMERIC" property="BXLH" />
+    <result column="ZT" jdbcType="NUMERIC" property="ZT" />
+    <result column="SSXQ" jdbcType="VARCHAR" property="SSXQ" />
+    <result column="XTZCH" jdbcType="VARCHAR" property="XTZCH" />
+    <result column="LOGXLH" jdbcType="NUMERIC" property="LOGXLH" />
+    <result column="SZYCZKDM1" jdbcType="VARCHAR" property="SZYCZKDM1" />
+    <result column="SZYCZKDM2" jdbcType="VARCHAR" property="SZYCZKDM2" />
+    <result column="SZYCZKDM3" jdbcType="VARCHAR" property="SZYCZKDM3" />
+    <result column="GXSJ" jdbcType="VARCHAR" property="GXSJ" />
+    <result column="CZYH" jdbcType="VARCHAR" property="CZYH" />
+    <result column="CZDW" jdbcType="VARCHAR" property="CZDW" />
+    <result column="CZIP" jdbcType="VARCHAR" property="CZIP" />
+    <result column="ZWID" jdbcType="VARCHAR" property="ZWID" />
+    <result column="ZWY_BDFS" jdbcType="VARCHAR" property="ZWY_BDFS" />
+    <result column="ZWY_BDJG" jdbcType="VARCHAR" property="ZWY_BDJG" />
+    <result column="ZWE_BDFS" jdbcType="VARCHAR" property="ZWE_BDFS" />
+    <result column="ZWE_BDJG" jdbcType="VARCHAR" property="ZWE_BDJG" />
+    <result column="ZWBDSJ" jdbcType="VARCHAR" property="ZWBDSJ" />
+    <result column="ZWBDFS" jdbcType="VARCHAR" property="ZWBDFS" />
+    <result column="ZWHYJG" jdbcType="VARCHAR" property="ZWHYJG" />
+    <result column="ZWSGHYMS" jdbcType="VARCHAR" property="ZWSGHYMS" />
+    <result column="LXCJBZ" jdbcType="VARCHAR" property="LXCJBZ" />
+    <result column="LSZWXLH" jdbcType="NUMERIC" property="LSZWXLH" />
+    <result column="DSXLH" jdbcType="VARCHAR" property="DSXLH" />
+    <result column="GXSJ2" jdbcType="VARCHAR" property="GXSJ2" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.zhidao.kstb.shqffkjs.model.Zwqd_zwsjxxWithBLOBs">
+    <result column="ZWY_TXSJ" jdbcType="BLOB" property="ZWY_TXSJ" />
+    <result column="ZWY_TZSJ" jdbcType="BLOB" property="ZWY_TZSJ" />
+    <result column="ZWE_TXSJ" jdbcType="BLOB" property="ZWE_TXSJ" />
+    <result column="ZWE_TZSJ" jdbcType="BLOB" property="ZWE_TZSJ" />
+    <result column="CJZP" jdbcType="BLOB" property="CJZP" />
+    <result column="ZWY_TXSJ_WS" jdbcType="BLOB" property="ZWY_TXSJ_WS" />
+    <result column="ZWE_TXSJ_WS" jdbcType="BLOB" property="ZWE_TXSJ_WS" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    XLH, DQM, JMSFZSLH, GMSFHM, XM, ZWCJJG, ZWY_ZCJG, ZWY_ZW, ZWY_TXZLZ, ZWE_ZCJG, ZWE_ZW, 
+    ZWE_TXZLZ, ZWCJQID, CJDW_GAJGJGDM, CJDW_GAJGMC, CJR_XM, CJSJ, SJGSDWDM, SJGSDWMC, 
+    CJZDIP, SJSCBS, SJSCSJ, ERRCODE, ERRMSG, SCSJBBH, BXLH, ZT, SSXQ, XTZCH, LOGXLH, 
+    SZYCZKDM1, SZYCZKDM2, SZYCZKDM3, GXSJ, CZYH, CZDW, CZIP, ZWID, ZWY_BDFS, ZWY_BDJG, 
+    ZWE_BDFS, ZWE_BDJG, ZWBDSJ, ZWBDFS, ZWHYJG, ZWSGHYMS, LXCJBZ, LSZWXLH, DSXLH, GXSJ2
+  </sql>
+  <sql id="Blob_Column_List">
+    ZWY_TXSJ, ZWY_TZSJ, ZWE_TXSJ, ZWE_TZSJ, CJZP, ZWY_TXSJ_WS, ZWE_TXSJ_WS
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from ZWQD_ZWSJXX
+    where XLH = #{XLH,jdbcType=NUMERIC}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+    delete from ZWQD_ZWSJXX
+    where XLH = #{XLH,jdbcType=NUMERIC}
+  </delete>
+  <insert id="insert" parameterType="com.zhidao.kstb.shqffkjs.model.Zwqd_zwsjxxWithBLOBs">
+    insert into ZWQD_ZWSJXX (XLH, DQM, JMSFZSLH, 
+      GMSFHM, XM, ZWCJJG, 
+      ZWY_ZCJG, ZWY_ZW, ZWY_TXZLZ, 
+      ZWE_ZCJG, ZWE_ZW, ZWE_TXZLZ, 
+      ZWCJQID, CJDW_GAJGJGDM, CJDW_GAJGMC, 
+      CJR_XM, CJSJ, SJGSDWDM, 
+      SJGSDWMC, CJZDIP, SJSCBS, 
+      SJSCSJ, ERRCODE, ERRMSG, 
+      SCSJBBH, BXLH, ZT, 
+      SSXQ, XTZCH, LOGXLH, 
+      SZYCZKDM1, SZYCZKDM2, SZYCZKDM3, 
+      GXSJ, CZYH, CZDW, CZIP, 
+      ZWID, ZWY_BDFS, ZWY_BDJG, 
+      ZWE_BDFS, ZWE_BDJG, ZWBDSJ, 
+      ZWBDFS, ZWHYJG, ZWSGHYMS, 
+      LXCJBZ, LSZWXLH, DSXLH, 
+      GXSJ2, ZWY_TXSJ, ZWY_TZSJ, 
+      ZWE_TXSJ, ZWE_TZSJ, CJZP, ZWY_TXSJ_WS, 
+      ZWE_TXSJ_WS)
+    values (#{XLH,jdbcType=NUMERIC}, #{DQM,jdbcType=VARCHAR}, #{JMSFZSLH,jdbcType=VARCHAR}, 
+      #{GMSFHM,jdbcType=VARCHAR}, #{XM,jdbcType=NVARCHAR}, #{ZWCJJG,jdbcType=VARCHAR}, 
+      #{ZWY_ZCJG,jdbcType=VARCHAR}, #{ZWY_ZW,jdbcType=VARCHAR}, #{ZWY_TXZLZ,jdbcType=VARCHAR}, 
+      #{ZWE_ZCJG,jdbcType=VARCHAR}, #{ZWE_ZW,jdbcType=VARCHAR}, #{ZWE_TXZLZ,jdbcType=VARCHAR}, 
+      #{ZWCJQID,jdbcType=VARCHAR}, #{CJDW_GAJGJGDM,jdbcType=VARCHAR}, #{CJDW_GAJGMC,jdbcType=NVARCHAR}, 
+      #{CJR_XM,jdbcType=NVARCHAR}, #{CJSJ,jdbcType=VARCHAR}, #{SJGSDWDM,jdbcType=VARCHAR}, 
+      #{SJGSDWMC,jdbcType=NVARCHAR}, #{CJZDIP,jdbcType=VARCHAR}, #{SJSCBS,jdbcType=VARCHAR}, 
+      #{SJSCSJ,jdbcType=VARCHAR}, #{ERRCODE,jdbcType=VARCHAR}, #{ERRMSG,jdbcType=NVARCHAR}, 
+      #{SCSJBBH,jdbcType=VARCHAR}, #{BXLH,jdbcType=NUMERIC}, #{ZT,jdbcType=NUMERIC}, 
+      #{SSXQ,jdbcType=VARCHAR}, #{XTZCH,jdbcType=VARCHAR}, #{LOGXLH,jdbcType=NUMERIC}, 
+      #{SZYCZKDM1,jdbcType=VARCHAR}, #{SZYCZKDM2,jdbcType=VARCHAR}, #{SZYCZKDM3,jdbcType=VARCHAR}, 
+      #{GXSJ,jdbcType=VARCHAR}, #{CZYH,jdbcType=VARCHAR}, #{CZDW,jdbcType=VARCHAR}, #{CZIP,jdbcType=VARCHAR}, 
+      #{ZWID,jdbcType=VARCHAR}, #{ZWY_BDFS,jdbcType=VARCHAR}, #{ZWY_BDJG,jdbcType=VARCHAR}, 
+      #{ZWE_BDFS,jdbcType=VARCHAR}, #{ZWE_BDJG,jdbcType=VARCHAR}, #{ZWBDSJ,jdbcType=VARCHAR}, 
+      #{ZWBDFS,jdbcType=VARCHAR}, #{ZWHYJG,jdbcType=VARCHAR}, #{ZWSGHYMS,jdbcType=VARCHAR}, 
+      #{LXCJBZ,jdbcType=VARCHAR}, #{LSZWXLH,jdbcType=NUMERIC}, #{DSXLH,jdbcType=VARCHAR}, 
+      #{GXSJ2,jdbcType=VARCHAR}, #{ZWY_TXSJ,jdbcType=BLOB}, #{ZWY_TZSJ,jdbcType=BLOB}, 
+      #{ZWE_TXSJ,jdbcType=BLOB}, #{ZWE_TZSJ,jdbcType=BLOB}, #{CJZP,jdbcType=BLOB}, #{ZWY_TXSJ_WS,jdbcType=BLOB}, 
+      #{ZWE_TXSJ_WS,jdbcType=BLOB})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhidao.kstb.shqffkjs.model.Zwqd_zwsjxxWithBLOBs">
+    insert into ZWQD_ZWSJXX
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="XLH != null">
+        XLH,
+      </if>
+      <if test="DQM != null">
+        DQM,
+      </if>
+      <if test="JMSFZSLH != null">
+        JMSFZSLH,
+      </if>
+      <if test="GMSFHM != null">
+        GMSFHM,
+      </if>
+      <if test="XM != null">
+        XM,
+      </if>
+      <if test="ZWCJJG != null">
+        ZWCJJG,
+      </if>
+      <if test="ZWY_ZCJG != null">
+        ZWY_ZCJG,
+      </if>
+      <if test="ZWY_ZW != null">
+        ZWY_ZW,
+      </if>
+      <if test="ZWY_TXZLZ != null">
+        ZWY_TXZLZ,
+      </if>
+      <if test="ZWE_ZCJG != null">
+        ZWE_ZCJG,
+      </if>
+      <if test="ZWE_ZW != null">
+        ZWE_ZW,
+      </if>
+      <if test="ZWE_TXZLZ != null">
+        ZWE_TXZLZ,
+      </if>
+      <if test="ZWCJQID != null">
+        ZWCJQID,
+      </if>
+      <if test="CJDW_GAJGJGDM != null">
+        CJDW_GAJGJGDM,
+      </if>
+      <if test="CJDW_GAJGMC != null">
+        CJDW_GAJGMC,
+      </if>
+      <if test="CJR_XM != null">
+        CJR_XM,
+      </if>
+      <if test="CJSJ != null">
+        CJSJ,
+      </if>
+      <if test="SJGSDWDM != null">
+        SJGSDWDM,
+      </if>
+      <if test="SJGSDWMC != null">
+        SJGSDWMC,
+      </if>
+      <if test="CJZDIP != null">
+        CJZDIP,
+      </if>
+      <if test="SJSCBS != null">
+        SJSCBS,
+      </if>
+      <if test="SJSCSJ != null">
+        SJSCSJ,
+      </if>
+      <if test="ERRCODE != null">
+        ERRCODE,
+      </if>
+      <if test="ERRMSG != null">
+        ERRMSG,
+      </if>
+      <if test="SCSJBBH != null">
+        SCSJBBH,
+      </if>
+      <if test="BXLH != null">
+        BXLH,
+      </if>
+      <if test="ZT != null">
+        ZT,
+      </if>
+      <if test="SSXQ != null">
+        SSXQ,
+      </if>
+      <if test="XTZCH != null">
+        XTZCH,
+      </if>
+      <if test="LOGXLH != null">
+        LOGXLH,
+      </if>
+      <if test="SZYCZKDM1 != null">
+        SZYCZKDM1,
+      </if>
+      <if test="SZYCZKDM2 != null">
+        SZYCZKDM2,
+      </if>
+      <if test="SZYCZKDM3 != null">
+        SZYCZKDM3,
+      </if>
+      <if test="GXSJ != null">
+        GXSJ,
+      </if>
+      <if test="CZYH != null">
+        CZYH,
+      </if>
+      <if test="CZDW != null">
+        CZDW,
+      </if>
+      <if test="CZIP != null">
+        CZIP,
+      </if>
+      <if test="ZWID != null">
+        ZWID,
+      </if>
+      <if test="ZWY_BDFS != null">
+        ZWY_BDFS,
+      </if>
+      <if test="ZWY_BDJG != null">
+        ZWY_BDJG,
+      </if>
+      <if test="ZWE_BDFS != null">
+        ZWE_BDFS,
+      </if>
+      <if test="ZWE_BDJG != null">
+        ZWE_BDJG,
+      </if>
+      <if test="ZWBDSJ != null">
+        ZWBDSJ,
+      </if>
+      <if test="ZWBDFS != null">
+        ZWBDFS,
+      </if>
+      <if test="ZWHYJG != null">
+        ZWHYJG,
+      </if>
+      <if test="ZWSGHYMS != null">
+        ZWSGHYMS,
+      </if>
+      <if test="LXCJBZ != null">
+        LXCJBZ,
+      </if>
+      <if test="LSZWXLH != null">
+        LSZWXLH,
+      </if>
+      <if test="DSXLH != null">
+        DSXLH,
+      </if>
+      <if test="GXSJ2 != null">
+        GXSJ2,
+      </if>
+      <if test="ZWY_TXSJ != null">
+        ZWY_TXSJ,
+      </if>
+      <if test="ZWY_TZSJ != null">
+        ZWY_TZSJ,
+      </if>
+      <if test="ZWE_TXSJ != null">
+        ZWE_TXSJ,
+      </if>
+      <if test="ZWE_TZSJ != null">
+        ZWE_TZSJ,
+      </if>
+      <if test="CJZP != null">
+        CJZP,
+      </if>
+      <if test="ZWY_TXSJ_WS != null">
+        ZWY_TXSJ_WS,
+      </if>
+      <if test="ZWE_TXSJ_WS != null">
+        ZWE_TXSJ_WS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="XLH != null">
+        #{XLH,jdbcType=NUMERIC},
+      </if>
+      <if test="DQM != null">
+        #{DQM,jdbcType=VARCHAR},
+      </if>
+      <if test="JMSFZSLH != null">
+        #{JMSFZSLH,jdbcType=VARCHAR},
+      </if>
+      <if test="GMSFHM != null">
+        #{GMSFHM,jdbcType=VARCHAR},
+      </if>
+      <if test="XM != null">
+        #{XM,jdbcType=NVARCHAR},
+      </if>
+      <if test="ZWCJJG != null">
+        #{ZWCJJG,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWY_ZCJG != null">
+        #{ZWY_ZCJG,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWY_ZW != null">
+        #{ZWY_ZW,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWY_TXZLZ != null">
+        #{ZWY_TXZLZ,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWE_ZCJG != null">
+        #{ZWE_ZCJG,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWE_ZW != null">
+        #{ZWE_ZW,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWE_TXZLZ != null">
+        #{ZWE_TXZLZ,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWCJQID != null">
+        #{ZWCJQID,jdbcType=VARCHAR},
+      </if>
+      <if test="CJDW_GAJGJGDM != null">
+        #{CJDW_GAJGJGDM,jdbcType=VARCHAR},
+      </if>
+      <if test="CJDW_GAJGMC != null">
+        #{CJDW_GAJGMC,jdbcType=NVARCHAR},
+      </if>
+      <if test="CJR_XM != null">
+        #{CJR_XM,jdbcType=NVARCHAR},
+      </if>
+      <if test="CJSJ != null">
+        #{CJSJ,jdbcType=VARCHAR},
+      </if>
+      <if test="SJGSDWDM != null">
+        #{SJGSDWDM,jdbcType=VARCHAR},
+      </if>
+      <if test="SJGSDWMC != null">
+        #{SJGSDWMC,jdbcType=NVARCHAR},
+      </if>
+      <if test="CJZDIP != null">
+        #{CJZDIP,jdbcType=VARCHAR},
+      </if>
+      <if test="SJSCBS != null">
+        #{SJSCBS,jdbcType=VARCHAR},
+      </if>
+      <if test="SJSCSJ != null">
+        #{SJSCSJ,jdbcType=VARCHAR},
+      </if>
+      <if test="ERRCODE != null">
+        #{ERRCODE,jdbcType=VARCHAR},
+      </if>
+      <if test="ERRMSG != null">
+        #{ERRMSG,jdbcType=NVARCHAR},
+      </if>
+      <if test="SCSJBBH != null">
+        #{SCSJBBH,jdbcType=VARCHAR},
+      </if>
+      <if test="BXLH != null">
+        #{BXLH,jdbcType=NUMERIC},
+      </if>
+      <if test="ZT != null">
+        #{ZT,jdbcType=NUMERIC},
+      </if>
+      <if test="SSXQ != null">
+        #{SSXQ,jdbcType=VARCHAR},
+      </if>
+      <if test="XTZCH != null">
+        #{XTZCH,jdbcType=VARCHAR},
+      </if>
+      <if test="LOGXLH != null">
+        #{LOGXLH,jdbcType=NUMERIC},
+      </if>
+      <if test="SZYCZKDM1 != null">
+        #{SZYCZKDM1,jdbcType=VARCHAR},
+      </if>
+      <if test="SZYCZKDM2 != null">
+        #{SZYCZKDM2,jdbcType=VARCHAR},
+      </if>
+      <if test="SZYCZKDM3 != null">
+        #{SZYCZKDM3,jdbcType=VARCHAR},
+      </if>
+      <if test="GXSJ != null">
+        #{GXSJ,jdbcType=VARCHAR},
+      </if>
+      <if test="CZYH != null">
+        #{CZYH,jdbcType=VARCHAR},
+      </if>
+      <if test="CZDW != null">
+        #{CZDW,jdbcType=VARCHAR},
+      </if>
+      <if test="CZIP != null">
+        #{CZIP,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWID != null">
+        #{ZWID,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWY_BDFS != null">
+        #{ZWY_BDFS,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWY_BDJG != null">
+        #{ZWY_BDJG,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWE_BDFS != null">
+        #{ZWE_BDFS,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWE_BDJG != null">
+        #{ZWE_BDJG,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWBDSJ != null">
+        #{ZWBDSJ,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWBDFS != null">
+        #{ZWBDFS,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWHYJG != null">
+        #{ZWHYJG,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWSGHYMS != null">
+        #{ZWSGHYMS,jdbcType=VARCHAR},
+      </if>
+      <if test="LXCJBZ != null">
+        #{LXCJBZ,jdbcType=VARCHAR},
+      </if>
+      <if test="LSZWXLH != null">
+        #{LSZWXLH,jdbcType=NUMERIC},
+      </if>
+      <if test="DSXLH != null">
+        #{DSXLH,jdbcType=VARCHAR},
+      </if>
+      <if test="GXSJ2 != null">
+        #{GXSJ2,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWY_TXSJ != null">
+        #{ZWY_TXSJ,jdbcType=BLOB},
+      </if>
+      <if test="ZWY_TZSJ != null">
+        #{ZWY_TZSJ,jdbcType=BLOB},
+      </if>
+      <if test="ZWE_TXSJ != null">
+        #{ZWE_TXSJ,jdbcType=BLOB},
+      </if>
+      <if test="ZWE_TZSJ != null">
+        #{ZWE_TZSJ,jdbcType=BLOB},
+      </if>
+      <if test="CJZP != null">
+        #{CJZP,jdbcType=BLOB},
+      </if>
+      <if test="ZWY_TXSJ_WS != null">
+        #{ZWY_TXSJ_WS,jdbcType=BLOB},
+      </if>
+      <if test="ZWE_TXSJ_WS != null">
+        #{ZWE_TXSJ_WS,jdbcType=BLOB},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhidao.kstb.shqffkjs.model.Zwqd_zwsjxxWithBLOBs">
+    update ZWQD_ZWSJXX
+    <set>
+      <if test="DQM != null">
+        DQM = #{DQM,jdbcType=VARCHAR},
+      </if>
+      <if test="JMSFZSLH != null">
+        JMSFZSLH = #{JMSFZSLH,jdbcType=VARCHAR},
+      </if>
+      <if test="GMSFHM != null">
+        GMSFHM = #{GMSFHM,jdbcType=VARCHAR},
+      </if>
+      <if test="XM != null">
+        XM = #{XM,jdbcType=NVARCHAR},
+      </if>
+      <if test="ZWCJJG != null">
+        ZWCJJG = #{ZWCJJG,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWY_ZCJG != null">
+        ZWY_ZCJG = #{ZWY_ZCJG,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWY_ZW != null">
+        ZWY_ZW = #{ZWY_ZW,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWY_TXZLZ != null">
+        ZWY_TXZLZ = #{ZWY_TXZLZ,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWE_ZCJG != null">
+        ZWE_ZCJG = #{ZWE_ZCJG,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWE_ZW != null">
+        ZWE_ZW = #{ZWE_ZW,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWE_TXZLZ != null">
+        ZWE_TXZLZ = #{ZWE_TXZLZ,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWCJQID != null">
+        ZWCJQID = #{ZWCJQID,jdbcType=VARCHAR},
+      </if>
+      <if test="CJDW_GAJGJGDM != null">
+        CJDW_GAJGJGDM = #{CJDW_GAJGJGDM,jdbcType=VARCHAR},
+      </if>
+      <if test="CJDW_GAJGMC != null">
+        CJDW_GAJGMC = #{CJDW_GAJGMC,jdbcType=NVARCHAR},
+      </if>
+      <if test="CJR_XM != null">
+        CJR_XM = #{CJR_XM,jdbcType=NVARCHAR},
+      </if>
+      <if test="CJSJ != null">
+        CJSJ = #{CJSJ,jdbcType=VARCHAR},
+      </if>
+      <if test="SJGSDWDM != null">
+        SJGSDWDM = #{SJGSDWDM,jdbcType=VARCHAR},
+      </if>
+      <if test="SJGSDWMC != null">
+        SJGSDWMC = #{SJGSDWMC,jdbcType=NVARCHAR},
+      </if>
+      <if test="CJZDIP != null">
+        CJZDIP = #{CJZDIP,jdbcType=VARCHAR},
+      </if>
+      <if test="SJSCBS != null">
+        SJSCBS = #{SJSCBS,jdbcType=VARCHAR},
+      </if>
+      <if test="SJSCSJ != null">
+        SJSCSJ = #{SJSCSJ,jdbcType=VARCHAR},
+      </if>
+      <if test="ERRCODE != null">
+        ERRCODE = #{ERRCODE,jdbcType=VARCHAR},
+      </if>
+      <if test="ERRMSG != null">
+        ERRMSG = #{ERRMSG,jdbcType=NVARCHAR},
+      </if>
+      <if test="SCSJBBH != null">
+        SCSJBBH = #{SCSJBBH,jdbcType=VARCHAR},
+      </if>
+      <if test="BXLH != null">
+        BXLH = #{BXLH,jdbcType=NUMERIC},
+      </if>
+      <if test="ZT != null">
+        ZT = #{ZT,jdbcType=NUMERIC},
+      </if>
+      <if test="SSXQ != null">
+        SSXQ = #{SSXQ,jdbcType=VARCHAR},
+      </if>
+      <if test="XTZCH != null">
+        XTZCH = #{XTZCH,jdbcType=VARCHAR},
+      </if>
+      <if test="LOGXLH != null">
+        LOGXLH = #{LOGXLH,jdbcType=NUMERIC},
+      </if>
+      <if test="SZYCZKDM1 != null">
+        SZYCZKDM1 = #{SZYCZKDM1,jdbcType=VARCHAR},
+      </if>
+      <if test="SZYCZKDM2 != null">
+        SZYCZKDM2 = #{SZYCZKDM2,jdbcType=VARCHAR},
+      </if>
+      <if test="SZYCZKDM3 != null">
+        SZYCZKDM3 = #{SZYCZKDM3,jdbcType=VARCHAR},
+      </if>
+      <if test="GXSJ != null">
+        GXSJ = #{GXSJ,jdbcType=VARCHAR},
+      </if>
+      <if test="CZYH != null">
+        CZYH = #{CZYH,jdbcType=VARCHAR},
+      </if>
+      <if test="CZDW != null">
+        CZDW = #{CZDW,jdbcType=VARCHAR},
+      </if>
+      <if test="CZIP != null">
+        CZIP = #{CZIP,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWID != null">
+        ZWID = #{ZWID,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWY_BDFS != null">
+        ZWY_BDFS = #{ZWY_BDFS,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWY_BDJG != null">
+        ZWY_BDJG = #{ZWY_BDJG,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWE_BDFS != null">
+        ZWE_BDFS = #{ZWE_BDFS,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWE_BDJG != null">
+        ZWE_BDJG = #{ZWE_BDJG,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWBDSJ != null">
+        ZWBDSJ = #{ZWBDSJ,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWBDFS != null">
+        ZWBDFS = #{ZWBDFS,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWHYJG != null">
+        ZWHYJG = #{ZWHYJG,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWSGHYMS != null">
+        ZWSGHYMS = #{ZWSGHYMS,jdbcType=VARCHAR},
+      </if>
+      <if test="LXCJBZ != null">
+        LXCJBZ = #{LXCJBZ,jdbcType=VARCHAR},
+      </if>
+      <if test="LSZWXLH != null">
+        LSZWXLH = #{LSZWXLH,jdbcType=NUMERIC},
+      </if>
+      <if test="DSXLH != null">
+        DSXLH = #{DSXLH,jdbcType=VARCHAR},
+      </if>
+      <if test="GXSJ2 != null">
+        GXSJ2 = #{GXSJ2,jdbcType=VARCHAR},
+      </if>
+      <if test="ZWY_TXSJ != null">
+        ZWY_TXSJ = #{ZWY_TXSJ,jdbcType=BLOB},
+      </if>
+      <if test="ZWY_TZSJ != null">
+        ZWY_TZSJ = #{ZWY_TZSJ,jdbcType=BLOB},
+      </if>
+      <if test="ZWE_TXSJ != null">
+        ZWE_TXSJ = #{ZWE_TXSJ,jdbcType=BLOB},
+      </if>
+      <if test="ZWE_TZSJ != null">
+        ZWE_TZSJ = #{ZWE_TZSJ,jdbcType=BLOB},
+      </if>
+      <if test="CJZP != null">
+        CJZP = #{CJZP,jdbcType=BLOB},
+      </if>
+      <if test="ZWY_TXSJ_WS != null">
+        ZWY_TXSJ_WS = #{ZWY_TXSJ_WS,jdbcType=BLOB},
+      </if>
+      <if test="ZWE_TXSJ_WS != null">
+        ZWE_TXSJ_WS = #{ZWE_TXSJ_WS,jdbcType=BLOB},
+      </if>
+    </set>
+    where XLH = #{XLH,jdbcType=NUMERIC}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.zhidao.kstb.shqffkjs.model.Zwqd_zwsjxxWithBLOBs">
+    update ZWQD_ZWSJXX
+    set DQM = #{DQM,jdbcType=VARCHAR},
+      JMSFZSLH = #{JMSFZSLH,jdbcType=VARCHAR},
+      GMSFHM = #{GMSFHM,jdbcType=VARCHAR},
+      XM = #{XM,jdbcType=NVARCHAR},
+      ZWCJJG = #{ZWCJJG,jdbcType=VARCHAR},
+      ZWY_ZCJG = #{ZWY_ZCJG,jdbcType=VARCHAR},
+      ZWY_ZW = #{ZWY_ZW,jdbcType=VARCHAR},
+      ZWY_TXZLZ = #{ZWY_TXZLZ,jdbcType=VARCHAR},
+      ZWE_ZCJG = #{ZWE_ZCJG,jdbcType=VARCHAR},
+      ZWE_ZW = #{ZWE_ZW,jdbcType=VARCHAR},
+      ZWE_TXZLZ = #{ZWE_TXZLZ,jdbcType=VARCHAR},
+      ZWCJQID = #{ZWCJQID,jdbcType=VARCHAR},
+      CJDW_GAJGJGDM = #{CJDW_GAJGJGDM,jdbcType=VARCHAR},
+      CJDW_GAJGMC = #{CJDW_GAJGMC,jdbcType=NVARCHAR},
+      CJR_XM = #{CJR_XM,jdbcType=NVARCHAR},
+      CJSJ = #{CJSJ,jdbcType=VARCHAR},
+      SJGSDWDM = #{SJGSDWDM,jdbcType=VARCHAR},
+      SJGSDWMC = #{SJGSDWMC,jdbcType=NVARCHAR},
+      CJZDIP = #{CJZDIP,jdbcType=VARCHAR},
+      SJSCBS = #{SJSCBS,jdbcType=VARCHAR},
+      SJSCSJ = #{SJSCSJ,jdbcType=VARCHAR},
+      ERRCODE = #{ERRCODE,jdbcType=VARCHAR},
+      ERRMSG = #{ERRMSG,jdbcType=NVARCHAR},
+      SCSJBBH = #{SCSJBBH,jdbcType=VARCHAR},
+      BXLH = #{BXLH,jdbcType=NUMERIC},
+      ZT = #{ZT,jdbcType=NUMERIC},
+      SSXQ = #{SSXQ,jdbcType=VARCHAR},
+      XTZCH = #{XTZCH,jdbcType=VARCHAR},
+      LOGXLH = #{LOGXLH,jdbcType=NUMERIC},
+      SZYCZKDM1 = #{SZYCZKDM1,jdbcType=VARCHAR},
+      SZYCZKDM2 = #{SZYCZKDM2,jdbcType=VARCHAR},
+      SZYCZKDM3 = #{SZYCZKDM3,jdbcType=VARCHAR},
+      GXSJ = #{GXSJ,jdbcType=VARCHAR},
+      CZYH = #{CZYH,jdbcType=VARCHAR},
+      CZDW = #{CZDW,jdbcType=VARCHAR},
+      CZIP = #{CZIP,jdbcType=VARCHAR},
+      ZWID = #{ZWID,jdbcType=VARCHAR},
+      ZWY_BDFS = #{ZWY_BDFS,jdbcType=VARCHAR},
+      ZWY_BDJG = #{ZWY_BDJG,jdbcType=VARCHAR},
+      ZWE_BDFS = #{ZWE_BDFS,jdbcType=VARCHAR},
+      ZWE_BDJG = #{ZWE_BDJG,jdbcType=VARCHAR},
+      ZWBDSJ = #{ZWBDSJ,jdbcType=VARCHAR},
+      ZWBDFS = #{ZWBDFS,jdbcType=VARCHAR},
+      ZWHYJG = #{ZWHYJG,jdbcType=VARCHAR},
+      ZWSGHYMS = #{ZWSGHYMS,jdbcType=VARCHAR},
+      LXCJBZ = #{LXCJBZ,jdbcType=VARCHAR},
+      LSZWXLH = #{LSZWXLH,jdbcType=NUMERIC},
+      DSXLH = #{DSXLH,jdbcType=VARCHAR},
+      GXSJ2 = #{GXSJ2,jdbcType=VARCHAR},
+      ZWY_TXSJ = #{ZWY_TXSJ,jdbcType=BLOB},
+      ZWY_TZSJ = #{ZWY_TZSJ,jdbcType=BLOB},
+      ZWE_TXSJ = #{ZWE_TXSJ,jdbcType=BLOB},
+      ZWE_TZSJ = #{ZWE_TZSJ,jdbcType=BLOB},
+      CJZP = #{CJZP,jdbcType=BLOB},
+      ZWY_TXSJ_WS = #{ZWY_TXSJ_WS,jdbcType=BLOB},
+      ZWE_TXSJ_WS = #{ZWE_TXSJ_WS,jdbcType=BLOB}
+    where XLH = #{XLH,jdbcType=NUMERIC}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhidao.kstb.shqffkjs.model.Zwqd_zwsjxx">
+    update ZWQD_ZWSJXX
+    set DQM = #{DQM,jdbcType=VARCHAR},
+      JMSFZSLH = #{JMSFZSLH,jdbcType=VARCHAR},
+      GMSFHM = #{GMSFHM,jdbcType=VARCHAR},
+      XM = #{XM,jdbcType=NVARCHAR},
+      ZWCJJG = #{ZWCJJG,jdbcType=VARCHAR},
+      ZWY_ZCJG = #{ZWY_ZCJG,jdbcType=VARCHAR},
+      ZWY_ZW = #{ZWY_ZW,jdbcType=VARCHAR},
+      ZWY_TXZLZ = #{ZWY_TXZLZ,jdbcType=VARCHAR},
+      ZWE_ZCJG = #{ZWE_ZCJG,jdbcType=VARCHAR},
+      ZWE_ZW = #{ZWE_ZW,jdbcType=VARCHAR},
+      ZWE_TXZLZ = #{ZWE_TXZLZ,jdbcType=VARCHAR},
+      ZWCJQID = #{ZWCJQID,jdbcType=VARCHAR},
+      CJDW_GAJGJGDM = #{CJDW_GAJGJGDM,jdbcType=VARCHAR},
+      CJDW_GAJGMC = #{CJDW_GAJGMC,jdbcType=NVARCHAR},
+      CJR_XM = #{CJR_XM,jdbcType=NVARCHAR},
+      CJSJ = #{CJSJ,jdbcType=VARCHAR},
+      SJGSDWDM = #{SJGSDWDM,jdbcType=VARCHAR},
+      SJGSDWMC = #{SJGSDWMC,jdbcType=NVARCHAR},
+      CJZDIP = #{CJZDIP,jdbcType=VARCHAR},
+      SJSCBS = #{SJSCBS,jdbcType=VARCHAR},
+      SJSCSJ = #{SJSCSJ,jdbcType=VARCHAR},
+      ERRCODE = #{ERRCODE,jdbcType=VARCHAR},
+      ERRMSG = #{ERRMSG,jdbcType=NVARCHAR},
+      SCSJBBH = #{SCSJBBH,jdbcType=VARCHAR},
+      BXLH = #{BXLH,jdbcType=NUMERIC},
+      ZT = #{ZT,jdbcType=NUMERIC},
+      SSXQ = #{SSXQ,jdbcType=VARCHAR},
+      XTZCH = #{XTZCH,jdbcType=VARCHAR},
+      LOGXLH = #{LOGXLH,jdbcType=NUMERIC},
+      SZYCZKDM1 = #{SZYCZKDM1,jdbcType=VARCHAR},
+      SZYCZKDM2 = #{SZYCZKDM2,jdbcType=VARCHAR},
+      SZYCZKDM3 = #{SZYCZKDM3,jdbcType=VARCHAR},
+      GXSJ = #{GXSJ,jdbcType=VARCHAR},
+      CZYH = #{CZYH,jdbcType=VARCHAR},
+      CZDW = #{CZDW,jdbcType=VARCHAR},
+      CZIP = #{CZIP,jdbcType=VARCHAR},
+      ZWID = #{ZWID,jdbcType=VARCHAR},
+      ZWY_BDFS = #{ZWY_BDFS,jdbcType=VARCHAR},
+      ZWY_BDJG = #{ZWY_BDJG,jdbcType=VARCHAR},
+      ZWE_BDFS = #{ZWE_BDFS,jdbcType=VARCHAR},
+      ZWE_BDJG = #{ZWE_BDJG,jdbcType=VARCHAR},
+      ZWBDSJ = #{ZWBDSJ,jdbcType=VARCHAR},
+      ZWBDFS = #{ZWBDFS,jdbcType=VARCHAR},
+      ZWHYJG = #{ZWHYJG,jdbcType=VARCHAR},
+      ZWSGHYMS = #{ZWSGHYMS,jdbcType=VARCHAR},
+      LXCJBZ = #{LXCJBZ,jdbcType=VARCHAR},
+      LSZWXLH = #{LSZWXLH,jdbcType=NUMERIC},
+      DSXLH = #{DSXLH,jdbcType=VARCHAR},
+      GXSJ2 = #{GXSJ2,jdbcType=VARCHAR}
+    where XLH = #{XLH,jdbcType=NUMERIC}
+  </update>
+</mapper>

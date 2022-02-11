@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--常住人口Mybatis持久层映射-->
+<mapper namespace="com.zhidao.kstb.dao.PushInfoDao">
+	<resultMap id="qrsqspMap" type="com.zhidao.kstb.model.tab.CZRK_QRSQSPXX">
+		<result column="XLH" property="xlh"/>
+		<result column="SPGLXLH" property="spglxlh"/>
+		<result column="RKXLH" property="rkxlh"/>
+		<result column="SQH" property="sqh"/>
+		<result column="GMSFHM" property="gmsfhm"/>
+		<result column="XM" property="xm"/>
+		<result column="CYM" property="cym"/>
+		<result column="XB" property="xb"/>
+		<result column="MZ" property="mz"/>
+		<result column="CSRQ" property="csrq"/>
+		<result column="CSSJ" property="cssj"/>
+		<result column="CSDGJ" property="csdgj"/>
+		<result column="CSDSSX" property="csdssx"/>
+		<result column="CSDXZ" property="csdxz"/>
+		<result column="JGGJ" property="jggj"/>
+		<result column="JGSSX" property="jgssx"/>
+		<result column="JGXZ" property="jgxz"/>
+		<result column="ZJXY" property="zjxy"/>
+		<result column="WHCD" property="whcd"/>
+		<result column="HYZK" property="hyzk"/>
+		<result column="BYZK" property="byzk"/>
+		<result column="SG" property="sg"/>
+		<result column="XX" property="xx"/>
+		<result column="ZY" property="zy"/>
+		<result column="ZYLB" property="zylb"/>
+		<result column="DWBM" property="dwbm"/>
+		<result column="FWCS" property="fwcs"/>
+		<result column="XXJB" property="xxjb"/>
+		<result column="HH" property="hh"/>
+		<result column="SBRGMSFHM" property="sbrgmsfhm"/>
+		<result column="SBRXM" property="sbrxm"/>
+		<result column="SBRQ" property="sbrq"/>
+		<result column="SBLB" property="sblb"/>
+		<result column="SBLY" property="sbly"/>
+		<result column="SLDWJGDM" property="sldwjgdm"/>
+		<result column="SLDWMC" property="sldwmc"/>
+		<result column="SLRXM" property="slrxm"/>
+		<result column="SLSJ" property="slsj"/>
+		<result column="DQM" property="dqm"/>
+		<result column="SSXQ" property="ssxq"/>
+		<result column="DZBM" property="dzbm"/>
+		<result column="XZ" property="xz"/>
+		<result column="FXJDM" property="fxjdm"/>
+		<result column="PCSDM" property="pcsdm"/>
+		<result column="PCSJGMC" property="pcsjgmc"/>
+		<result column="JWQDM" property="jwqdm"/>
+		<result column="JWQMC" property="jwqmc"/>
+		<result column="XZJDDM" property="xzjddm"/>
+		<result column="SPQK" property="spqk"/>
+		<result column="SPDWJGDM" property="spdwjgdm"/>
+		<result column="SPDWMC" property="spdwmc"/>
+		<result column="SPRXM" property="sprxm"/>
+		<result column="SPSJ" property="spsj"/>
+		<result column="SPJG" property="spjg"/>
+		<result column="LXDH" property="lxdh"/>
+		<result column="SQJCWHDM" property="sqjcwhdm"/>
+		<result column="SQJCWHMC" property="sqjcwhmc"/>
+		<result column="BLQK" property="blqk"/>
+		<result column="HLX" property="hlx"/>
+		<result column="SPJB" property="spjb"/>
+		<result column="QSRQ" property="qsrq"/>
+		<result column="SHSPZT" property="shspzt"/>
+		<result column="YWFL" property="ywfl"/>
+		<result column="SHSPLC" property="shsplc"/>
+		<result column="SPYYMS" property="spyyms"/>
+		<result column="SPBH" property="spbh"/>
+		<result column="SPPZXLH" property="sppzxlh"/>
+		<result column="BZ" property="bz"/>
+		<result column="SHSPYJ" property="shspyj"/>
+		<result column="YSQRGX" property="ysqrgx"/>
+		<result column="SLRID" property="slrid"/>
+		<result column="SPRID" property="sprid"/>
+		<result column="XMPY" property="xmpy"/>
+		<result column="YWBLSJ" property="ywblsj"/>
+		<result column="QRLB" property="qrlb"/>
+		<result column="BDQYFW" property="bdqyfw"/>
+		<result column="QCDSSX" property="qcdssx"/>
+		<result column="QCDXZ" property="qcdxz"/>
+		<result column="BTKRGMSFHM" property="btkrgmsfhm"/>
+		<result column="BTKRXM" property="btkrxm"/>
+		<result column="YTKRGX" property="ytkrgx"/>
+		<result column="SPJGDM" property="spjgdm"/>
+		<result column="CXFL" property="cxfl"/>
+		<result column="XCRKZCZRKYY" property="xcrkzczrkyy"/>
+		<result column="BDYWSWBH" property="bdywswbh"/>
+		<result column="SPYWFL" property="spywfl"/>
+		<result column="OSPJB" property="ospjb"/>
+		<result column="QCDGJ" property="qcdgj"/>
+		<result column="QYRHKDJJGDM" property="qyrhkdjjgdm"/>
+		<result column="QYRHKDJJGMC" property="qyrhkdjjgmc"/>
+		<result column="QRDHKDJJGDM" property="qrdhkdjjgdm"/>
+		<result column="QRDHKDJJGMC" property="qrdhkdjjgmc"/>
+		<result column="SQRSSX" property="sqrssx"/>
+		<result column="SQRXZ" property="sqrxz"/>
+		<result column="ZQZBH" property="zqzbh"/>
+		<result column="QCTBS" property="qctbs"/>
+		<result column="SLPCSDM" property="slpcsdm"/>
+		<result column="XPXLH" property="xpxlh"/>
+		<result column="QYZLB" property="qyzlb"/>
+		<result column="FHZC" property="fhzc"/>
+		<result column="HLWSLBZ" property="hlwslbz"/>
+		<result column="HLWID" property="hlwid"/>
+		<result column="RCZL" property="rczl"/>
+		<result column="QRZLB" property="qrzlb"/>
+		<result column="CYZS" property="cyzs"/>
+		<result column="SQZXLB" property="sqzxlb"/>
+		<result column="SQZXMS" property="sqzxms"/>
+		<result column="SQTSBS" property="sqtsbs"/>
+		<result column="SQTSJG" property="sqtsjg"/>
+		<result column="KSTBBS" property="kstbbs"/>
+		<result column="YWXTBH" property="ywxtbh"/>
+	</resultMap>
+	<resultMap id="SQQCTSXXMap" type="com.zhidao.kstb.model.tab.KSTB_SQQCXX_FS">
+		<result column="XLH" property="xlh"/>
+		<result column="YWXTBH" property="ywxtbh"/>
+		<result column="YWLSH" property="ywlsh"/>
+		<result column="SQR_GMSFHM" property="sqrGmsfhm"/>
+		<result column="SQR_XM" property="sqrXm"/>
+		<result column="SQR_LXDH" property="sqrLxdh"/>
+		<result column="SQR_ZZ_SSXQDM" property="sqrZzSsxqdm"/>
+		<result column="SQR_ZZ_QHNXXDZ" property="sqrZzQhnxxdz"/>
+		<result column="QYR_GMSFHM" property="qyrGmsfhm"/>
+		<result column="QYR_XM" property="qyrXm"/>
+		<result column="QYR_XBDM" property="qyrXbdm"/>
+		<result column="QYR_MZDM" property="qyrMzdm"/>
+		<result column="QYR_CSRQ" property="qyrCsrq"/>
+		<result column="QYR_YSQRGX_JTGXDM" property="qyrYsqrgxJtgxdm"/>
+		<result column="QYLDYYDM" property="qylbdm"/>
+		<result column="QCD_SSXQDM" property="qcdSsxqdm"/>
+		<result column="QCD_QHNXXDZ" property="qcdQhnxxdz"/>
+		<result column="QCD_HKDJJG_GAJGDM" property="qcdHkdjjgGajgjgdm"/>
+		<result column="QCD_HKDJJG_GAJGMC" property="qcdHkdjjggajgjgmc"/>
+		<result column="QRD_SSXQDM" property="qrdSsxqdm"/>
+		<result column="QRD_QHNXXDZ" property="qrdqhnxxdz"/>
+		<result column="QRD_HKDJJG_GAJGJGDM" property="qrdHkdjjgGajgjgdm"/>
+		<result column="QRD_HKDJJG_GAJGJGMC" property="qrdHkdjjgGajgjgmc"/>
+		<result column="ZQZBH" property="zqzbh"/>
+		<result column="QFJG_GAJGJGDM" property="qfjgGajgjgdm"/>
+		<result column="QFJG_GAJGMC" property="qfjgGajgmc"/>
+		<result column="CBR_XM" property="cbrXm"/>
+		<result column="QFRQ" property="qfrq"/>
+		<result column="BZ" property="bz"/>
+		<result column="YXJZRQ" property="yxjzrq"/>
+		<result column="XTYW_QYFWDM" property="xtywQyfwdm"/>
+		<result column="SLDW_GAJGJGDM" property="sldwGajgjgdm"/>
+		<result column="SLDW_GAJGMC" property="sldwGajgmc"/>
+		<result column="SLDW_LXDH" property="sldwLxdh"/>
+		<result column="SLR_GMSFHM" property="slrGmsfhm"/>
+		<result column="SLR_XM" property="slrXm"/>
+		<result column="SLR_LXDH" property="slrLxdh"/>
+		<result column="SLSJ" property="slsj"/>
+		<result column="SJGSDWDM" property="sjgsdwdm"/>
+		<result column="SJGSDWMC" property="sjgsdwmc"/>
+		<result column="FSDW_SJGSDWDM" property="fsdwSjgsdwdm"/>
+		<result column="FSDW_SJGSDWMC" property="fsdwSjgsdwmc"/>
+		<result column="JSDW_SJGSDWDM" property="jsdwSjgsdwdm"/>
+		<result column="JSDW_SJGSDWMC" property="jsdwSjgsdwmc"/>
+		<result column="CODE" property="code"/>
+		<result column="MSG" property="msg"/>
+		<result column="QCFKXLH" property="qcfkXlh"/>
+		<result column="QCFKSJ" property="qcfkSj"/>
+		<result column="BYQCBS" property="byqcBs"/>
+		<result column="QRSQSQH" property="qrsqSqh"/>
+		<result column="QCZXRKXLH" property="qczxrkXlh"/>
+	</resultMap>
+	<resultMap id="QCFKTSXXMap" type="com.zhidao.kstb.model.tab.KSTB_QCFKXX_FS">
+		<result column="YWXTBH" property="ywxtbh"/>
+		<result column="QYR_GMSFHM" property="qyrGmsfhm"/>
+		<result column="QYR_XM" property="qyrXm"/>
+		<result column="QYR_XBDM" property="qyrXbdm"/>
+		<result column="QYR_MZDM" property="qyrMzdm"/>
+		<result column="QYR_CSRQ" property="qyrCsrq"/>
+		<result column="QYR_CYM" property="qyrCym"/>
+		<result column="QYR_YCZRGX_JTGXDM" property="qyrYczrgxJtgxdm"/>
+		<result column="QYR_XLDM" property="qyrXldm"/>
+		<result column="QYR_HYZKDM" property="qyrHyzkdm"/>
+		<result column="QYR_ZY" property="qyrZy"/>
+		<result column="QYR_CSD_GJHDQDM" property="qyrCsdGjhdqdm"/>
+		<result column="QYR_CSD_SSXQDM" property="qyrCsdSsxqdm"/>
+		<result column="QYR_CSD_QHNXXDZ" property="qyrCsdQhnxxdz"/>
+		<result column="QYR_JG_GJHDQDM" property="qyrJgGjhdqdm"/>
+		<result column="QYR_JG_SSXQDM" property="qyrJgSsxqdm"/>
+		<result column="QYR_JG_QHNXXDZ" property="qyrJgQhnxxdz"/>
+		<result column="QYLDYYDM" property="qyldyydm"/>
+		<result column="QYZBH" property="qyzbh"/>
+		<result column="CZR_GMSFHM" property="czrGmsfhm"/>
+		<result column="CZR_XM" property="czrXm"/>
+		<result column="YZZ_SSXQDM" property="yzzSsxqdm"/>
+		<result column="YZZ_QHNXXDZ" property="yzzQhnxxdz"/>
+		<result column="YZZ_CXFLDM" property="yzzCxfldm"/>
+		<result column="QWD_SSXQDM" property="qwdSsxqdm"/>
+		<result column="QWD_QHNXXDZ" property="qwdQhnxxdz"/>
+		<result column="QFJG_GAJGJGDM" property="qfjgGajgjgdm"/>
+		<result column="QFJG_GAJGMC" property="qfjgGajgmc"/>
+		<result column="QFRQ" property="qfrq"/>
+		<result column="YXQJZRQ" property="yxqjzrq"/>
+		<result column="CBR_XM" property="cbrXm"/>
+		<result column="BZ" property="bz"/>
+		<result column="ZQBH" property="zqbh"/>
+		<result column="XTYW_QYFWDM" property="xtywQyfwdm"/>
+		<result column="SLDW_GAJGJGDM" property="sldwGajgjgdm"/>
+		<result column="SLDW_GAJGMC" property="sldwGajgmc"/>
+		<result column="SLDW_LXDH" property="sldwLxdh"/>
+		<result column="SLR_GMSFHM" property="slrGmsfhm"/>
+		<result column="SLR_XM" property="slrXm"/>
+		<result column="SLR_LXDH" property="slrLxdh"/>
+		<result column="SLSJ" property="slsj"/>
+		<result column="SJGSDWDM" property="sjgsdwdm"/>
+		<result column="SJGSDWMC" property="sjgsdwmc"/>
+		<result column="FSDW_SJGSDWDM" property="fsdwSjgsdwdm"/>
+		<result column="FSDW_SJGSDWMC" property="fsdwSjgsdwmc"/>
+		<result column="JSDW_SJGSDWDM" property="jsdwSjgsdwdm"/>
+		<result column="JSDW_SJGSDWMC" property="jsdwSjgsdwmc"/>
+		<result column="BYQC_JYQK" property="byqcJyqk"/>
+		<result column="CODE" property="code"/>
+		<result column="MSG" property="msg"/>
+		<result column="RKXLH" property="rkxlh"/>
+		<result column="QCZXRKXLH" property="qczxrkxlh"/>
+		<result column="SQQCXLH" property="sqqcxlh"/>
+		<result column="ZAGLYWFLDM" property="zaglywfld"/>
+		<result column="BBH" property="bbh"/>
+		<result column="SID" property="sid"/>
+		<result column="NO" property="no"/>
+		<result column="URL" property="url"/>
+		<result column="KHDURL" property="khdurl"/>
+		<result column="FFNAME" property="ffname"/>
+		<result column="SQZCM" property="sqzcm"/>
+		<result column="XLH" property="xlh"/>
+	</resultMap>
+	<resultMap id="BYQCFKTSXXMap" type="com.zhidao.kstb.model.tab.KSTB_BYQCFKXX_FS">
+		<result column="YWXTBH" property="ywxtbh"/>
+		<result column="YWLSH" property="ywlsh"/>
+		<result column="SQR_GMSFHM" property="sqrGmsfhm"/>
+		<result column="SQR_XM" property="sqrXm"/>
+		<result column="BYQC_JYQK" property="byqcJyqk"/>
+		<result column="BLDW_GAJGJGDM" property="bldwGajgjgdm"/>
+		<result column="BLDW_GAJGMC" property="bldwGajgmc"/>
+		<result column="BLDW_LXDH" property="bldwLxdh"/>
+		<result column="BLR_GMSFHM" property="blrGmsfhm"/>
+		<result column="BLR_XM" property="blrXm"/>
+		<result column="BLR_LXDH" property="blrLxdh"/>
+		<result column="BLSJ" property="blsj"/>
+		<result column="SJGSDWDM" property="sjgsdwdm"/>
+		<result column="SJGSDWMC" property="sjgsdwmc"/>
+		<result column="FSDW_SJGSDWDM" property="fsdwSjgsdwdm"/>
+		<result column="FSDW_SJGSDWMC" property="fsdwSjgsdwmc"/>
+		<result column="JSDW_SJGSDWDM" property="jsdwSjgsdwdm"/>
+		<result column="JSDW_SJGSDWMC" property="jsdwSjgsdwmc"/>
+		<result column="XTYW_QYFWDM" property="xtywQyfwdm"/>
+		<result column="RKXLH" property="rkxlh"/>
+		<result column="SQQCXLH" property="sqqcxlh"/>
+		<result column="SQH" property="sqh"/>
+		<result column="ZAGLYWFLDM" property="zaglywfldm"/>
+		<result column="BBH" property="bbh"/>
+		<result column="SID" property="sid"/>
+		<result column="NO" property="no"/>
+		<result column="URL" property="url"/>
+		<result column="KHDURL" property="khdurl"/>
+		<result column="FFNAME" property="ffname"/>
+		<result column="SQZCM" property="sqzcm"/>
+		<result column="XLH" property="xlh"/>
+		<result column="CODE" property="code"/>
+		<result column="MSG" property="msg"/>
+	</resultMap>
+	<resultMap id="CZRKJBXXMap" type="com.zhidao.kstb.model.tab.CZRK_JBXX">
+		<result column="XLH" property="xlh"/>
+		<result column="ZT" property="zt"/>
+		<result column="DQM" property="dqm"/>
+		<result column="SLSJ" property="slsj"/>
+		<result column="YWFL" property="ywfl"/>
+		<result column="RYID" property="ryid"/>
+		<result column="GMSFHM" property="gmsfhm"/>
+		<result column="XM" property="xm"/>
+		<result column="CYM" property="cym"/>
+		<result column="XB" property="xb"/>
+		<result column="MZ" property="mz"/>
+		<result column="CSRQ" property="csrq"/>
+		<result column="CSSJ" property="cssj"/>
+		<result column="CSDGJ" property="csdgj"/>
+		<result column="CSDSSX" property="csdssx"/>
+		<result column="CSDXZ" property="csdxz"/>
+		<result column="JGGJ" property="jggj"/>
+		<result column="JGSSX" property="jgssx"/>
+		<result column="JGXZ" property="jgxz"/>
+		<result column="DZBM" property="dzbm"/>
+		<result column="SSXQ" property="ssxq"/>
+		<result column="XZ" property="xz"/>
+		<result column="PCSDM" property="pcsdm"/>
+		<result column="PCSJGMC" property="pcsjgmc"/>
+		<result column="WHCD" property="whcd"/>
+		<result column="HYZK" property="hyzk"/>
+		<result column="ZY" property="zy"/>
+		<result column="ZYLB" property="zylb"/>
+		<result column="FWCS" property="fwcs"/>
+		<result column="LXDH" property="lxdh"/>
+		<result column="ZJXY" property="zjxy"/>
+		<result column="BYZK" property="byzk"/>
+		<result column="SG" property="sg"/>
+		<result column="XX" property="xx"/>
+		<result column="JHRYHM" property="jhryhm"/>
+		<result column="JHRYXM" property="jhryxm"/>
+		<result column="JHRYGX" property="jhrygx"/>
+		<result column="JHREHM" property="jhrehm"/>
+		<result column="JHREXM" property="jhrexm"/>
+		<result column="JHREGX" property="jhregx"/>
+		<result column="FQHM" property="fqhm"/>
+		<result column="FQXM" property="fqxm"/>
+		<result column="MQHM" property="mqhm"/>
+		<result column="MQXM" property="mqxm"/>
+		<result column="POHM" property="pohm"/>
+		<result column="POXM" property="poxm"/>
+		<result column="HSLBD" property="hslbd"/>
+		<result column="HYLBD" property="hylbd"/>
+		<result column="HDLBSGJDQ" property="hdlbsgjdq"/>
+		<result column="HDLBSSSXQ" property="hdlbsssxq"/>
+		<result column="HDLBSXZ" property="hdlbsxz"/>
+		<result column="QCRQ" property="qcrq"/>
+		<result column="QCZXLB" property="qczxlb"/>
+		<result column="QWDGJ" property="qwdgj"/>
+		<result column="QWDSSX" property="qwdssx"/>
+		<result column="QWDXZ" property="qwdxz"/>
+		<result column="SWRQ" property="swrq"/>
+		<result column="SWZXRQ" property="swzxrq"/>
+		<result column="SWZXLB" property="swzxlb"/>
+		<result column="XXJB" property="xxjb"/>
+		<result column="XPXLH" property="xpxlh"/>
+		<result column="HH" property="hh"/>
+		<result column="HLX" property="hlx"/>
+		<result column="YHZGX" property="yhzgx"/>
+		<result column="NZF" property="nzf"/>
+		<result column="JMSFZXLH" property="jmsfzxlh"/>
+		<result column="JMSFZQFJGMC" property="jmsfzqfjgmc"/>
+		<result column="JMSFZYXQXQSRQ" property="jmsfzyxqxqsrq"/>
+		<result column="JMSFZYXQXJZRQ" property="jmsfzyxqxjzrq"/>
+		<result column="JMSFZSLYY" property="jmsfzslyy"/>
+		<result column="JLXDM" property="jlxdm"/>
+		<result column="JLXMC" property="jlxmc"/>
+		<result column="JWQDM" property="jwqdm"/>
+		<result column="JWQMC" property="jwqmc"/>
+		<result column="XZJDDM" property="xzjddm"/>
+		<result column="SQJCWHDM" property="sqjcwhdm"/>
+		<result column="JMZDM" property="jmzd"/>
+		<result column="XMPY" property="xmpy"/>
+		<result column="HYLB" property="hylb"/>
+		<result column="JS" property="js"/>
+		<result column="RKJBXXXLH" property="rkjbxxxlh"/>
+		<result column="BDRQ" property="bdrq"/>
+		<result column="BDLB" property="bdlb"/>
+		<result column="QYDZBM" property="qydzbm"/>
+		<result column="QYGJ" property="qygj"/>
+		<result column="QYSSXQ" property="qyssxq"/>
+		<result column="QYXZ" property="qyxz"/>
+		<result column="QYPCSDM" property="qypcsdm"/>
+		<result column="QYPCSJGMC" property="qypcsjgm"/>
+		<result column="YCZRGX" property="yczrgx"/>
+		<result column="JMSFZQFRQ" property="jmsfzqfrq"/>
+		<result column="FXJDM" property="fxjdm"/>
+		<result column="QYFXJDM" property="qyfxjdm"/>
+		<result column="HKBBH" property="hkbbh"/>
+		<result column="LSCYM" property="lscym"/>
+		<result column="SJJZDYY" property="sjjzdyy"/>
+		<result column="QTDZBM" property="qtdzbm"/>
+		<result column="QTDZSSXQ" property="qtdzssxq"/>
+		<result column="QTDZXZ" property="qtdzxz"/>
+		<result column="QTDZPCSDM" property="qtdzpcsdm"/>
+		<result column="ZWXLH" property="zwxlh"/>
+		<result column="SYS_WRITE" property="sysWrite"/>
+		<result column="X" property="x"/>
+		<result column="M" property="m"/>
+		<result column="DWBM" property="dwbm"/>
+		<result column="JHRYZJZL" property="jhryzjzl"/>
+		<result column="JHRYZJHM" property="jhryzjhm"/>
+		<result column="JHRYWWX" property="jhrywwx"/>
+		<result column="JHRYWWM" property="jhrywwm"/>
+		<result column="JHRYWWM" property="jhrylxdh"/>
+		<result column="JHREZJZL" property="jhrezjzl"/>
+		<result column="JHREZJHM" property="jhrezjhm"/>
+		<result column="JHREWWX" property="jhrewwx"/>
+		<result column="JHREWWM" property="jhrewwm"/>
+		<result column="JHRELXDH" property="jhrelxdh"/>
+		<result column="FQZJZL" property="fqzjzl"/>
+		<result column="FQZJHM" property="fqzjhm"/>
+		<result column="FQWWX" property="fqwx"/>
+		<result column="FQWWM" property="fqwwm"/>
+		<result column="MQZJZL" property="mqzjzl"/>
+		<result column="MQZJHM" property="mqzjhm"/>
+		<result column="MQWWX" property="mqwwx"/>
+		<result column="MQWWM" property="mqwwm"/>
+		<result column="POZJZL" property="pozjzl"/>
+		<result column="POZJHM" property="pozjhm"/>
+		<result column="POWWX" property="powwx"/>
+		<result column="POWWM" property="powwm"/>
+		<result column="JMSFZXZ" property="jmsfzxz"/>
+		<result column="RHYZBS" property="rhyzbs"/>
+		<result column="RKZXLB" property="rkzxlb"/>
+		<result column="ZXSJ" property="zxsj"/>
+		<result column="GXSJ" property="gxsj"/>
+		<result column="QYXZJDDM" property="qyxzjddm"/>
+		<result column="XCRKZCZRKYY" property="xcrkzczrkyy"/>
+		<result column="LZDCXFL" property="lzdcxfl"/>
+		<result column="CXFL" property="cxfl"/>
+		<result column="QYYY" property="qyyy"/>
+		<result column="WHBS" property="whbs"/>
+		<result column="ZDRYBZ" property="zdrybz"/>
+		<result column="MLPH" property="mlph"/>
+		<result column="MLXZ" property="mlxz"/>
+		<result column="SHGXYCW" property="shgxycw"/>
+		<result column="SHGXYHM" property="shgxyhm"/>
+		<result column="SHGXYXM" property="shgxyxm"/>
+		<result column="SHGXYZZ" property="shgxyzz"/>
+		<result column="SHGXECW" property="shgxecw"/>
+		<result column="SHGXEHM" property="shgxehm"/>
+		<result column="SHGXEXM" property="shgxexm"/>
+		<result column="NYZYRKLHCZYY" property="nyzyrklhczyy"/>
+		<result column="ZYJSZC_PDBZ" property="zyjszcPdbz"/>
+		<result column="JNDJ_PDBZ" property="jndjPdbz"/>
+		<result column="NCJDZZYXBYS_PDBZ" property="ncjdzzyxbysPdbz"/>
+		<result column="JJQX_PDBZ" property="jjqxPdbz"/>
+		<result column="ZCZJYHJZWNYS_PDBZ" property="zczjyhjzwnysPdbz"/>
+		<result column="NCJSBTCXYLHCZ_PDBZ" property="ncjsbtcxylhczPdbz"/>
+		<result column="CXSXTZ_PDBZ" property="cxsxtzPdbz"/>
+		<result column="JMSFZXLH1" property="jmsfzxlh1"/>
+		<result column="QYZLB" property="qyzlb"/>
+		<result column="FHZC" property="fhzc"/>
+		<result column="FHZC" property="rczl"/>
+		<result column="QRZLB" property="qrzlb"/>
+		<result column="CYZS" property="cyzs"/>
+	</resultMap>
+	<insert id="addMoveOutInformation" parameterType="com.zhidao.kstb.model.tab.KSTB_SQQCXX_FS">
+		INSERT
+		INTO
+		KSTB_SQQCXX_FS(
+		XLH,YWXTBH,YWLSH,
+		SQR_GMSFHM,SQR_XM,SQR_LXDH,
+		SQR_ZZ_SSXQDM,SQR_ZZ_QHNXXDZ,QYR_GMSFHM,
+		QYR_XM,QYR_XBDM,QYR_MZDM,
+		QYR_CSRQ,QYR_YSQRGX_JTGXDM,QYLDYYDM,
+		QCD_SSXQDM,QCD_QHNXXDZ,QCD_HKDJJG_GAJGDM,
+		QCD_HKDJJG_GAJGMC,QRD_SSXQDM,QRD_QHNXXDZ,
+		QRD_HKDJJG_GAJGJGDM,QRD_HKDJJG_GAJGJGMC,ZQZBH,
+		QFJG_GAJGJGDM,QFJG_GAJGMC,CBR_XM,
+		QFRQ,BZ,YXJZRQ,
+		XTYW_QYFWDM,SLDW_GAJGJGDM,SLDW_GAJGMC,
+		SLDW_LXDH,SLR_GMSFHM,SLR_XM,
+		SLR_LXDH,SLSJ,SJGSDWDM,
+		SJGSDWMC,FSDW_SJGSDWDM,FSDW_SJGSDWMC,
+		JSDW_SJGSDWDM,JSDW_SJGSDWMC,
+		CODE,MSG,QCFKXLH,
+		QCFKSJ,BYQCBS,QRSQSQH,
+		ZAGLYWFLDM,BBH,SID,
+		NO,URL,KHDURL,
+		FFNAME,SQZCM
+		)VALUES (
+		#{xlh,jdbcType=VARCHAR},#{ywxtbh,jdbcType=VARCHAR},#{ywlsh,jdbcType=VARCHAR},
+		#{sqrGmsfhm,jdbcType=VARCHAR},#{sqrXm,jdbcType=VARCHAR},#{sqrLxdh,jdbcType=VARCHAR},
+		#{sqrZzSsxqdm,jdbcType=VARCHAR},#{sqrZzQhnxxdz,jdbcType=VARCHAR},#{qyrGmsfhm,jdbcType=VARCHAR},
+		#{qyrXm,jdbcType=VARCHAR},#{qyrXbdm,jdbcType=VARCHAR},#{qyrMzdm,jdbcType=VARCHAR},
+		TO_DATE(#{qyrCsrq,jdbcType=VARCHAR},'yyyy-mm-dd'),#{qyrYsqrgxJtgxdm,jdbcType=VARCHAR},#{qylbdm,jdbcType=VARCHAR},
+		#{qcdSsxqdm,jdbcType=VARCHAR},#{qcdQhnxxdz,jdbcType=VARCHAR},#{qcdHkdjjgGajgjgdm,jdbcType=VARCHAR},
+		#{qcdHkdjjggajgjgmc,jdbcType=VARCHAR},#{qrdSsxqdm,jdbcType=VARCHAR},#{qrdqhnxxdz,jdbcType=VARCHAR},
+		#{qrdHkdjjgGajgjgdm,jdbcType=VARCHAR},#{qrdHkdjjgGajgjgmc,jdbcType=VARCHAR},#{zqzbh,jdbcType=VARCHAR},
+		#{qfjgGajgjgdm,jdbcType=VARCHAR},#{qfjgGajgmc,jdbcType=VARCHAR},#{cbrXm,jdbcType=VARCHAR},
+		TO_DATE(#{qfrq,jdbcType=VARCHAR},'yyyy-mm-dd'),#{bz,jdbcType=VARCHAR},TO_DATE(#{yxjzrq,jdbcType=VARCHAR},'yyyy-mm-dd'),
+		#{xtywQyfwdm,jdbcType=VARCHAR},#{sldwGajgjgdm,jdbcType=VARCHAR},#{sldwGajgmc,jdbcType=VARCHAR},
+		#{sldwLxdh,jdbcType=VARCHAR},#{slrGmsfhm,jdbcType=VARCHAR},#{slrXm,jdbcType=VARCHAR},
+		#{slrLxdh,jdbcType=VARCHAR},TO_DATE(#{slsj,jdbcType=VARCHAR},'yyyy-mm-dd HH24:MI:SS'),#{sjgsdwdm,jdbcType=VARCHAR},
+		#{sjgsdwmc,jdbcType=VARCHAR},#{fsdwSjgsdwdm,jdbcType=VARCHAR},#{fsdwSjgsdwmc,jdbcType=VARCHAR},
+		#{jsdwSjgsdwdm,jdbcType=VARCHAR},#{jsdwSjgsdwmc,jdbcType=VARCHAR},#{code,jdbcType=VARCHAR},
+		#{msg,jdbcType=VARCHAR},#{qcfkXlh,jdbcType=VARCHAR},TO_DATE(#{qcfkSj,jdbcType=VARCHAR},'yyyy-mm-dd HH24:MI:SS'),
+		#{byqcBs,jdbcType=VARCHAR},#{qrsqSqh,jdbcType=VARCHAR},#{zaglywfldm,jdbcType=VARCHAR},
+		#{bbh,jdbcType=VARCHAR},#{sid,jdbcType=VARCHAR},#{no,jdbcType=VARCHAR},
+		#{url,jdbcType=VARCHAR},#{khdurl,jdbcType=VARCHAR},#{ffname,jdbcType=VARCHAR},
+		#{sqzcm,jdbcType=VARCHAR})
+	</insert>
+	<insert id="addFeedBackInfo" parameterType="com.zhidao.kstb.model.tab.KSTB_QCFKXX_FS">
+		INSERT
+		INTO
+		KSTB_QCFKXX_FS(
+		YWXTBH,QYR_GMSFHM,QYR_XM,
+		QYR_XBDM,QYR_MZDM,QYR_CSRQ,
+		QYR_CYM,QYR_YCZRGX_JTGXDM,QYR_XLDM,
+		QYR_HYZKDM,QYR_ZY,QYR_CSD_GJHDQDM,
+		QYR_CSD_SSXQDM,QYR_CSD_QHNXXDZ,QYR_JG_GJHDQDM,
+		QYR_JG_SSXQDM,QYR_JG_QHNXXDZ,QYLDYYDM,
+		QYZBH,CZR_GMSFHM,CZR_XM,
+		YZZ_SSXQDM,YZZ_QHNXXDZ,YZZ_CXFLDM,
+		QWD_SSXQDM,QWD_QHNXXDZ,QFJG_GAJGJGDM,
+		QFJG_GAJGMC,QFRQ,YXQJZRQ,
+		CBR_XM,BZ,ZQBH,
+		XTYW_QYFWDM,SLDW_GAJGJGDM,SLDW_GAJGMC,
+		SLDW_LXDH,SLR_GMSFHM,SLR_XM,
+		SLR_LXDH,SLSJ,SJGSDWDM,
+		SJGSDWMC,FSDW_SJGSDWDM,FSDW_SJGSDWMC,
+		JSDW_SJGSDWDM,JSDW_SJGSDWMC,BYQC_JYQK,
+		CODE,MSG,RKXLH,
+		QCZXRKXLH,SQQCXLH,ZAGLYWFLDM,
+		BBH,SID,NO,
+		URL,KHDURL,FFNAME,
+		SQZCM,XLH
+		)VALUES(
+		#{ywxtbh,jdbcType=VARCHAR},#{qyrGmsfhm,jdbcType=VARCHAR},#{qyrXm,jdbcType=VARCHAR},
+		#{qyrXbdm,jdbcType=VARCHAR},#{qyrMzdm,jdbcType=VARCHAR},TO_DATE(#{qyrCsrq,jdbcType=VARCHAR},'yyyy-mm-dd'),
+		#{qyrCym,jdbcType=VARCHAR},#{qyrYczrgxJtgxdm,jdbcType=VARCHAR},#{qyrXldm,jdbcType=VARCHAR},
+		#{qyrHyzkdm,jdbcType=VARCHAR},#{qyrZy,jdbcType=VARCHAR},#{qyrCsdGjhdqdm,jdbcType=VARCHAR},
+		#{qyrCsdSsxqdm,jdbcType=VARCHAR},#{qyrCsdQhnxxdz,jdbcType=VARCHAR},#{qyrJgGjhdqdm,jdbcType=VARCHAR},
+		#{qyrJgSsxqdm,jdbcType=VARCHAR},#{qyrJgQhnxxdz,jdbcType=VARCHAR},#{qyldyydm,jdbcType=VARCHAR},
+		#{qyzbh,jdbcType=VARCHAR},#{czrGmsfhm,jdbcType=VARCHAR},#{czrXm,jdbcType=VARCHAR},
+		#{yzzSsxqdm,jdbcType=VARCHAR},#{yzzQhnxxdz,jdbcType=VARCHAR},#{yzzCxfldm,jdbcType=VARCHAR},
+		#{qwdSsxqdm,jdbcType=VARCHAR},#{qwdQhnxxdz,jdbcType=VARCHAR},#{qfjgGajgjgdm,jdbcType=VARCHAR},
+		#{qfjgGajgmc,jdbcType=VARCHAR},TO_DATE(#{qfrq,jdbcType=VARCHAR},'yyyy-mm-dd'),TO_DATE(#{yxqjzrq,jdbcType=VARCHAR},'yyyy-mm-dd'),
+		#{cbrXm,jdbcType=VARCHAR},#{bz,jdbcType=VARCHAR},#{zqbh,jdbcType=VARCHAR},
+		#{xtywQyfwdm,jdbcType=VARCHAR},#{sldwGajgjgdm,jdbcType=VARCHAR},#{sldwGajgmc,jdbcType=VARCHAR},
+		#{sldwLxdh,jdbcType=VARCHAR},#{slrGmsfhm,jdbcType=VARCHAR},#{slrXm,jdbcType=VARCHAR},
+		#{slrLxdh,jdbcType=VARCHAR},TO_DATE(#{slsj,jdbcType=VARCHAR},'yyyy-mm-dd HH24:MI:SS'),#{sjgsdwdm,jdbcType=VARCHAR},
+		#{sjgsdwmc,jdbcType=VARCHAR},#{fsdwSjgsdwdm,jdbcType=VARCHAR},#{fsdwSjgsdwmc,jdbcType=VARCHAR},
+		#{jsdwSjgsdwdm,jdbcType=VARCHAR},#{jsdwSjgsdwmc,jdbcType=VARCHAR},#{byqcJyqk,jdbcType=VARCHAR},
+		#{code,jdbcType=VARCHAR},#{msg,jdbcType=VARCHAR},#{rkxlh,jdbcType=VARCHAR},
+		#{qczxrkxlh,jdbcType=VARCHAR},#{sqqcxlh,jdbcType=VARCHAR},#{zaglywfld,jdbcType=VARCHAR},
+		#{bbh,jdbcType=VARCHAR},#{sid,jdbcType=VARCHAR},#{no,jdbcType=VARCHAR},
+		#{url,jdbcType=VARCHAR},#{khdurl,jdbcType=VARCHAR},#{ffname,jdbcType=VARCHAR},
+		#{sqzcm,jdbcType=VARCHAR},#{xlh,jdbcType=VARCHAR})
+	</insert>
+	<insert id="addUnFeedBackInfo" parameterType="com.zhidao.kstb.model.tab.KSTB_BYQCFKXX_FS">
+		INSERT
+		INTO
+		KSTB_BYQCFKXX_FS(
+		YWXTBH,YWLSH,SQR_GMSFHM,
+		SQR_XM,BYQC_JYQK,BLDW_GAJGJGDM,
+		BLDW_GAJGMC,BLDW_LXDH,BLR_GMSFHM,
+		BLR_XM,BLR_LXDH,BLSJ,
+		SJGSDWDM,SJGSDWMC,FSDW_SJGSDWDM,
+		FSDW_SJGSDWMC,JSDW_SJGSDWDM,JSDW_SJGSDWMC,
+		XTYW_QYFWDM,RKXLH,SQQCXLH,
+		SQH,ZAGLYWFLDM,BBH,
+		SID,NO,URL,
+		KHDURL,FFNAME,SQZCM,
+		XLH,CODE,MSG
+		)VALUES(
+		#{ywxtbh,jdbcType=VARCHAR},#{ywlsh,jdbcType=VARCHAR},#{sqrGmsfhm,jdbcType=VARCHAR},
+		#{sqrXm,jdbcType=VARCHAR},#{byqcJyqk,jdbcType=VARCHAR},#{bldwGajgjgdm,jdbcType=VARCHAR},
+		#{bldwGajgmc,jdbcType=VARCHAR},#{bldwLxdh,jdbcType=VARCHAR},#{blrGmsfhm,jdbcType=VARCHAR},
+		#{blrXm,jdbcType=VARCHAR},#{blrLxdh,jdbcType=VARCHAR},TO_DATE(#{blsj,jdbcType=VARCHAR},'yyyy-mm-dd HH24:MI:SS'),
+		#{sjgsdwdm,jdbcType=VARCHAR},#{sjgsdwmc,jdbcType=VARCHAR},#{fsdwSjgsdwdm,jdbcType=VARCHAR},
+		#{fsdwSjgsdwmc,jdbcType=VARCHAR},#{jsdwSjgsdwdm,jdbcType=VARCHAR},#{jsdwSjgsdwmc,jdbcType=VARCHAR},
+		#{xtywQyfwdm,jdbcType=VARCHAR},#{rkxlh,jdbcType=VARCHAR},#{sqqcxlh,jdbcType=VARCHAR},
+		#{sqh,jdbcType=VARCHAR},#{zaglywfldm,jdbcType=VARCHAR},#{bbh,jdbcType=VARCHAR},
+		#{sid,jdbcType=VARCHAR},#{no,jdbcType=VARCHAR},#{url,jdbcType=VARCHAR},
+		#{khdurl,jdbcType=VARCHAR},#{ffname,jdbcType=VARCHAR},#{sqzcm,jdbcType=VARCHAR},
+		#{xlh,jdbcType=VARCHAR},#{code,jdbcType=VARCHAR},#{msg,jdbcType=VARCHAR})
+	</insert>
+	<update id="changeApprovalInformation" parameterType="com.zhidao.kstb.model.tab.CZRK_QRSQSPXX">
+		UPDATE
+		CZRK_QRSQSPXX
+		SET
+		YWXTBH=#{ywxtbh}
+		WHERE SQH=#{sqh}
+	</update>
+	<update id="changeMoveOutStatus" parameterType="com.zhidao.kstb.model.tab.KSTB_SQQCXX_FS">
+		UPDATE
+		KSTB_SQQCXX_FS
+		SET
+		BYQCBS='0',
+		QCFKSJ=TO_CHAR(SYSDATE,'yyyymmddhh24miss'),
+		QCFKXLH=#{qcfkxlh,jdbcType=VARCHAR}
+		WHERE
+		YWXTBH=#{ywxtbh,jdbcType=VARCHAR}
+		AND
+		CODE='10'
+	</update>
+	<update id="changeUnMoveOutStatus" parameterType="com.zhidao.kstb.model.tab.KSTB_SQQCXX_FS">
+		UPDATE
+		KSTB_SQQCXX_FS
+		SET BYQCBS='1',
+		QCFKSJ=TO_CHAR(SYSDATE,'yyyymmddhh24miss'),
+		QCFKXLH=#{qcfkxlh,jdbcType=VARCHAR}
+		WHERE
+		YWXTBH=#{ywxtbh,jdbcType=VARCHAR}
+		AND CODE=10
+	</update>
+	<update id="changeStatusIntoDestroy" parameterType="com.zhidao.kstb.model.tab.CZRK_JBXX">
+		UPDATE
+		CZRK_JBXX
+		SET
+		ZT=3
+		WHERE
+		GMSFHM=#{gmsfhm,jdbcType=VARCHAR}
+	</update>
+	<select id="existOfRecord" resultType="java.lang.Integer">
+		SELECT
+			COUNT(1)
+		FROM
+			KSTB_SQQCXX_FS
+		WHERE
+			YWXTBH=#{ywxtbh,jdbcType=VARCHAR}
+		  AND
+			QYR_GMSFHM=#{qyrGmsfhm,jdbcType=VARCHAR}
+	</select>
+	<select id="existOfFeedBack" resultType="java.lang.Integer">
+		SELECT
+		COUNT(1)
+		FROM
+		KSTB_QCFKXX_FS
+		WHERE
+		YWXTBH = #{ywxtbh,jdbcType=VARCHAR}
+		AND
+		QYR_GMSFHM = #{qyrGmsfhm,jdbcType=VARCHAR}
+	</select>
+	<select id="existOfUnFeedBack" resultType="java.lang.Integer">
+		SELECT
+		COUNT(1)
+		FROM
+		KSTB_BYQCFKXX_FS
+		WHERE
+		YWXTBH=#{ywxtbh,jdbcType=VARCHAR}
+		AND
+		SQR_GMSFHM=#{sqrGmsfhm,jdbcType=VARCHAR}
+	</select>
+	<select id="existOfMoveOut" resultType="java.lang.Integer">
+		SELECT
+		COUNT(1)
+		FROM
+		KSTB_SQQCXX_FS
+		WHERE
+		YWXTBH=#{ywxtbh,jdbcType=VARCHAR}
+	</select>
+	<select id="getYwxtbhFromSqqcInfo" resultType="java.lang.String">
+		SELECT
+		YWXTBH
+		FROM
+		KSTB_SQQCXX
+		WHERE
+		YWXTBH=#{ywxtbh,jdbcType=VARCHAR} AND ROWNUM = 1
+	</select>
+	<select id="getPopulationInfo" resultType="java.lang.Integer">
+		SELECT
+		MAX(XLH)
+		FROM
+		CZRK_JBXX
+		WHERE
+		GMSFHM=#{gmsfhm,jdbcType=VARCHAR}
+		AND
+		ZT=0
+	</select>
+</mapper>

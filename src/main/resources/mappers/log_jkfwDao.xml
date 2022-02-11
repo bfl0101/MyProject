@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhidao.kstb.log.dao.Log_jkfwDao">
+    <resultMap id="BaseResultMap" type="com.zhidao.kstb.log.model.Log_jkfw">
+        <result column="XLH" jdbcType="VARCHAR" property="XLH"/>
+        <result column="YWLSH" jdbcType="VARCHAR" property="YWLSH"/>
+        <result column="YWLX" jdbcType="VARCHAR" property="YWLX"/>
+        <result column="JKMC" jdbcType="VARCHAR" property="JKMC"/>
+        <result column="FSSJ" jdbcType="VARCHAR" property="FSSJ"/>
+        <result column="FSIP" jdbcType="VARCHAR" property="FSIP"/>
+        <result column="JSSJ" jdbcType="VARCHAR" property="JSSJ"/>
+        <result column="JKURL" jdbcType="VARCHAR" property="JKURL"/>
+    </resultMap>
+    <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.zhidao.kstb.log.model.Log_jkfwWithBLOBs">
+        <result column="FSNR" jdbcType="CLOB" property="FSNR"/>
+        <result column="JSNR" jdbcType="CLOB" property="JSNR"/>
+    </resultMap>
+    <sql id="Blob_Column_List">
+        FSNR, JSNR
+    </sql>
+    <insert id="insert" parameterType="com.zhidao.kstb.log.model.Log_jkfwWithBLOBs">
+        insert into LOG_JKFW (XLH, YWLSH, YWLX,
+        JKMC, FSSJ, FSIP, JSSJ,
+        JKURL, FSNR, JSNR)
+        values (#{XLH,jdbcType=VARCHAR}, #{YWLSH,jdbcType=VARCHAR}, #{YWLX,jdbcType=VARCHAR},
+        #{JKMC,jdbcType=VARCHAR}, #{FSSJ,jdbcType=VARCHAR}, #{FSIP,jdbcType=VARCHAR}, #{JSSJ,jdbcType=VARCHAR},
+        #{JKURL,jdbcType=VARCHAR}, #{FSNR,jdbcType=CLOB}, #{JSNR,jdbcType=CLOB})
+    </insert>
+    <insert id="insertSelective" parameterType="com.zhidao.kstb.log.model.Log_jkfwWithBLOBs">
+        insert into LOG_JKFW
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="XLH != null">
+                XLH,
+            </if>
+            <if test="YWLSH != null">
+                YWLSH,
+            </if>
+            <if test="YWLX != null">
+                YWLX,
+            </if>
+            <if test="JKMC != null">
+                JKMC,
+            </if>
+            <if test="FSSJ != null">
+                FSSJ,
+            </if>
+            <if test="FSIP != null">
+                FSIP,
+            </if>
+            <if test="JSSJ != null">
+                JSSJ,
+            </if>
+            <if test="JKURL != null">
+                JKURL,
+            </if>
+            <if test="FSNR != null">
+                FSNR,
+            </if>
+            <if test="JSNR != null">
+                JSNR,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="XLH != null">
+                #{XLH,jdbcType=VARCHAR},
+            </if>
+            <if test="YWLSH != null">
+                #{YWLSH,jdbcType=VARCHAR},
+            </if>
+            <if test="YWLX != null">
+                #{YWLX,jdbcType=VARCHAR},
+            </if>
+            <if test="JKMC != null">
+                #{JKMC,jdbcType=VARCHAR},
+            </if>
+            <if test="FSSJ != null">
+                #{FSSJ,jdbcType=VARCHAR},
+            </if>
+            <if test="FSIP != null">
+                #{FSIP,jdbcType=VARCHAR},
+            </if>
+            <if test="JSSJ != null">
+                #{JSSJ,jdbcType=VARCHAR},
+            </if>
+            <if test="JKURL != null">
+                #{JKURL,jdbcType=VARCHAR},
+            </if>
+            <if test="FSNR != null">
+                #{FSNR,jdbcType=CLOB},
+            </if>
+            <if test="JSNR != null">
+                #{JSNR,jdbcType=CLOB},
+            </if>
+        </trim>
+    </insert>
+</mapper>

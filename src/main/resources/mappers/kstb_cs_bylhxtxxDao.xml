@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhidao.kstb.dao.KSTB_CS_BYLHXTXXDao">
+  <resultMap id="BaseResultMap" type="com.zhidao.kstb.model.tabc.KSTB_CS_BYLHXTXX">
+    <result column="YWXTBH" jdbcType="VARCHAR" property="ywxtbh" />
+    <result column="XM" jdbcType="VARCHAR" property="xm" />
+    <result column="SBR_GMSFHM" jdbcType="VARCHAR" property="sbrGmsfhm" />
+    <result column="SBR_XM" jdbcType="VARCHAR" property="sbrXm" />
+    <result column="KSTBSHJGDM" jdbcType="VARCHAR" property="kstbshjgdm" />
+    <result column="BYLH_JYQK" jdbcType="VARCHAR" property="bylhJyqk" />
+    <result column="BLDW_GAJGJGDM" jdbcType="VARCHAR" property="bldwGajgjgdm" />
+    <result column="BLDW_GAJGMC" jdbcType="VARCHAR" property="bldwGajgmc" />
+    <result column="BLDW_LXDH" jdbcType="VARCHAR" property="bldwLxdh" />
+    <result column="BLR_XM" jdbcType="VARCHAR" property="blrXm" />
+    <result column="BLSJ" jdbcType="VARCHAR" property="blsj" />
+    <result column="XTYW_QYFWDM" jdbcType="VARCHAR" property="xtywQyfwdm" />
+    <result column="FSDW_SJGSDWDM" jdbcType="VARCHAR" property="fsdwSjgsdwdm" />
+    <result column="FSDW_SJGSDWMC" jdbcType="VARCHAR" property="fsdwSjgsdwmc" />
+    <result column="JSDW_SJGSDWDM" jdbcType="VARCHAR" property="jsdwSjgsdwdm" />
+    <result column="JSDW_SJGSDWMC" jdbcType="VARCHAR" property="jsdwSjgsdwmc" />
+    <result column="BLR_GMSFHM" jdbcType="VARCHAR" property="blrGmsfhm" />
+    <result column="BLR_LXDH" jdbcType="VARCHAR" property="blrLxdh" />
+  </resultMap>
+  <insert id="insert" parameterType="com.zhidao.kstb.model.tabc.KSTB_CS_BYLHXTXX">
+    insert into KSTB_CS_BYLHXTXX (YWXTBH, XM, SBR_GMSFHM, 
+      SBR_XM, KSTBSHJGDM, BYLH_JYQK, 
+      BLDW_GAJGJGDM, BLDW_GAJGMC, BLDW_LXDH, 
+      BLR_XM, BLSJ, XTYW_QYFWDM, 
+      FSDW_SJGSDWDM, FSDW_SJGSDWMC, JSDW_SJGSDWDM, 
+      JSDW_SJGSDWMC, BLR_GMSFHM, BLR_LXDH
+      )
+    values (#{ywxtbh,jdbcType=VARCHAR}, #{xm,jdbcType=VARCHAR}, #{sbrGmsfhm,jdbcType=VARCHAR}, 
+      #{sbrXm,jdbcType=VARCHAR}, #{kstbshjgdm,jdbcType=VARCHAR}, #{bylhJyqk,jdbcType=VARCHAR}, 
+      #{bldwGajgjgdm,jdbcType=VARCHAR}, #{bldwGajgmc,jdbcType=VARCHAR}, #{bldwLxdh,jdbcType=VARCHAR}, 
+      #{blrXm,jdbcType=VARCHAR}, #{blsj,jdbcType=VARCHAR}, #{xtywQyfwdm,jdbcType=VARCHAR}, 
+      #{fsdwSjgsdwdm,jdbcType=VARCHAR}, #{fsdwSjgsdwmc,jdbcType=VARCHAR}, #{jsdwSjgsdwdm,jdbcType=VARCHAR}, 
+      #{jsdwSjgsdwmc,jdbcType=VARCHAR}, #{blrGmsfhm,jdbcType=VARCHAR}, #{blrLxdh,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhidao.kstb.model.tabc.KSTB_CS_BYLHXTXX">
+    insert into KSTB_CS_BYLHXTXX
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ywxtbh != null">
+        YWXTBH,
+      </if>
+      <if test="xm != null">
+        XM,
+      </if>
+      <if test="sbrGmsfhm != null">
+        SBR_GMSFHM,
+      </if>
+      <if test="sbrXm != null">
+        SBR_XM,
+      </if>
+      <if test="kstbshjgdm != null">
+        KSTBSHJGDM,
+      </if>
+      <if test="bylhJyqk != null">
+        BYLH_JYQK,
+      </if>
+      <if test="bldwGajgjgdm != null">
+        BLDW_GAJGJGDM,
+      </if>
+      <if test="bldwGajgmc != null">
+        BLDW_GAJGMC,
+      </if>
+      <if test="bldwLxdh != null">
+        BLDW_LXDH,
+      </if>
+      <if test="blrXm != null">
+        BLR_XM,
+      </if>
+      <if test="blsj != null">
+        BLSJ,
+      </if>
+      <if test="xtywQyfwdm != null">
+        XTYW_QYFWDM,
+      </if>
+      <if test="fsdwSjgsdwdm != null">
+        FSDW_SJGSDWDM,
+      </if>
+      <if test="fsdwSjgsdwmc != null">
+        FSDW_SJGSDWMC,
+      </if>
+      <if test="jsdwSjgsdwdm != null">
+        JSDW_SJGSDWDM,
+      </if>
+      <if test="jsdwSjgsdwmc != null">
+        JSDW_SJGSDWMC,
+      </if>
+      <if test="blrGmsfhm != null">
+        BLR_GMSFHM,
+      </if>
+      <if test="blrLxdh != null">
+        BLR_LXDH,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ywxtbh != null">
+        #{ywxtbh,jdbcType=VARCHAR},
+      </if>
+      <if test="xm != null">
+        #{xm,jdbcType=VARCHAR},
+      </if>
+      <if test="sbrGmsfhm != null">
+        #{sbrGmsfhm,jdbcType=VARCHAR},
+      </if>
+      <if test="sbrXm != null">
+        #{sbrXm,jdbcType=VARCHAR},
+      </if>
+      <if test="kstbshjgdm != null">
+        #{kstbshjgdm,jdbcType=VARCHAR},
+      </if>
+      <if test="bylhJyqk != null">
+        #{bylhJyqk,jdbcType=VARCHAR},
+      </if>
+      <if test="bldwGajgjgdm != null">
+        #{bldwGajgjgdm,jdbcType=VARCHAR},
+      </if>
+      <if test="bldwGajgmc != null">
+        #{bldwGajgmc,jdbcType=VARCHAR},
+      </if>
+      <if test="bldwLxdh != null">
+        #{bldwLxdh,jdbcType=VARCHAR},
+      </if>
+      <if test="blrXm != null">
+        #{blrXm,jdbcType=VARCHAR},
+      </if>
+      <if test="blsj != null">
+        #{blsj,jdbcType=VARCHAR},
+      </if>
+      <if test="xtywQyfwdm != null">
+        #{xtywQyfwdm,jdbcType=VARCHAR},
+      </if>
+      <if test="fsdwSjgsdwdm != null">
+        #{fsdwSjgsdwdm,jdbcType=VARCHAR},
+      </if>
+      <if test="fsdwSjgsdwmc != null">
+        #{fsdwSjgsdwmc,jdbcType=VARCHAR},
+      </if>
+      <if test="jsdwSjgsdwdm != null">
+        #{jsdwSjgsdwdm,jdbcType=VARCHAR},
+      </if>
+      <if test="jsdwSjgsdwmc != null">
+        #{jsdwSjgsdwmc,jdbcType=VARCHAR},
+      </if>
+      <if test="blrGmsfhm != null">
+        #{blrGmsfhm,jdbcType=VARCHAR},
+      </if>
+      <if test="blrLxdh != null">
+        #{blrLxdh,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

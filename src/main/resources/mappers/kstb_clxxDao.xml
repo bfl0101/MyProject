@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhidao.kstb.sqshqfjs.dao.Kstb_clxxDao">
+    <resultMap id="BaseResultMap" type="com.zhidao.kstb.sqshqfjs.model.req.SqshRecord">
+        <id column="ID" jdbcType="VARCHAR" property="ID"/>
+        <result column="YWXTBH" jdbcType="VARCHAR" property="YWXTBH"/>
+        <result column="SXH" jdbcType="VARCHAR" property="SXH"/>
+        <result column="CLLBDM" jdbcType="VARCHAR" property="CLLBDM"/>
+        <result column="CLMC" jdbcType="VARCHAR" property="CLMC"/>
+        <result column="CLGS" jdbcType="VARCHAR" property="CLGS"/>
+        <result column="CLNR" jdbcType="CLOB" property="CLNR"/>
+        <result column="CLNR_BLOB" jdbcType="BLOB" property="CLNR_BLOB"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID, YWXTBH, SXH, CLLBDM, CLMC, CLGS
+    </sql>
+    <sql id="Blob_Column_List">
+        CLNR,CLNR_BLOB
+    </sql>
+    <insert id="insert" parameterType="com.zhidao.kstb.sqshqfjs.model.req.SqshRecord">
+        insert into KSTB_CLXX (ID, YWXTBH, SXH,
+        CLLBDM, CLMC, CLGS,
+        CLNR,CLNR_BLOB)
+        values (#{ID,jdbcType=VARCHAR}, #{YWXTBH,jdbcType=VARCHAR}, #{SXH,jdbcType=VARCHAR},
+        #{CLLBDM,jdbcType=VARCHAR}, #{CLMC,jdbcType=VARCHAR}, #{CLGS,jdbcType=VARCHAR},
+        #{CLNR,jdbcType=CLOB},#{CLNR_BLOB,jdbcType=BLOB})
+    </insert>
+    <insert id="insertSelective" parameterType="com.zhidao.kstb.sqshqfjs.model.req.SqshRecord">
+        insert into KSTB_CLXX
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="ID != null">
+                ID,
+            </if>
+            <if test="YWXTBH != null">
+                YWXTBH,
+            </if>
+            <if test="SXH != null">
+                SXH,
+            </if>
+            <if test="CLLBDM != null">
+                CLLBDM,
+            </if>
+            <if test="CLMC != null">
+                CLMC,
+            </if>
+            <if test="CLGS != null">
+                CLGS,
+            </if>
+            <if test="CLNR != null">
+                CLNR,
+            </if>
+            <if test="CLNR_BLOB != null">
+                CLNR_BLOB,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="ID != null">
+                #{ID,jdbcType=VARCHAR},
+            </if>
+            <if test="YWXTBH != null">
+                #{YWXTBH,jdbcType=VARCHAR},
+            </if>
+            <if test="SXH != null">
+                #{SXH,jdbcType=VARCHAR},
+            </if>
+            <if test="CLLBDM != null">
+                #{CLLBDM,jdbcType=VARCHAR},
+            </if>
+            <if test="CLMC != null">
+                #{CLMC,jdbcType=VARCHAR},
+            </if>
+            <if test="CLGS != null">
+                #{CLGS,jdbcType=VARCHAR},
+            </if>
+            <if test="CLNR != null">
+                #{CLNR,jdbcType=CLOB},
+            </if>
+            <if test="CLNR != null">
+                #{CLNR_BLOB,jdbcType=BLOB},
+            </if>
+        </trim>
+    </insert>
+</mapper>

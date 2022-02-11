@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PACKAGE>
+    <PACKAGEHEAD>
+        <BBH>default</BBH>
+        <FSDW_SJGSDWDM>default</FSDW_SJGSDWDM>
+        <FSDW_SJGSDWMC>default</FSDW_SJGSDWMC>
+        <JSDW_SJGSDWDM>default</JSDW_SJGSDWDM>
+        <JSDW_SJGSDWMC>default</JSDW_SJGSDWMC>
+        <HZGLYWXTFLYDM>default</HZGLYWXTFLYDM>
+        <YWXTBH>default</YWXTBH>
+        <XTYWQYFW>default</XTYWQYFW>
+        <FSSJ>default</FSSJ>
+    </PACKAGEHEAD>
+    <DATA>
+        <CODE>default</CODE>
+        <MSG>default</MSG>
+    </DATA>
+</PACKAGE>

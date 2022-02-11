@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PACKAGE>
+    <PACKAGEHEAD>
+        <BBH>default</BBH>
+        <FSDW_SJGSDWDM>default </FSDW_SJGSDWDM>
+        <FSDW_SJGSDWMC>default</FSDW_SJGSDWMC>
+        <JSDW_SJGSDWDM>default</JSDW_SJGSDWDM>
+        <JSDW_SJGSDWMC>default</JSDW_SJGSDWMC>
+        <ZAGLYWFLDM>default</ZAGLYWFLDM>
+        <YWXTBH>default</YWXTBH>
+        <YWXTQYFW>default</YWXTQYFW>
+        <FSSJ>default</FSSJ>
+        <CODE>default</CODE>
+        <MSG>default</MSG>
+    </PACKAGEHEAD>
+    <DATA>
+        <YWXTBH>default</YWXTBH>
+        <YWLSH>default</YWLSH>
+        <SQR_GMSFHM>default</SQR_GMSFHM>
+        <SQR_XM>default</SQR_XM>
+        <BYQC_JYQK>default</BYQC_JYQK>
+        <XTYW_QYFWDM>default</XTYW_QYFWDM>
+        <BLDW_GAJGJGDM>default</BLDW_GAJGJGDM>
+        <BLDW_GAJGMC>default</BLDW_GAJGMC>
+        <BLDW_LXDH>default</BLDW_LXDH>
+        <BLR_GMSFHM>default</BLR_GMSFHM>
+        <BLR_XM>default</BLR_XM>
+        <BLR_LXDH>default</BLR_LXDH>
+        <BLSJ>default</BLSJ>
+        <SJGSDWDM>default</SJGSDWDM>
+        <SJGSDWMC>default</SJGSDWMC>
+        <FSDW_SJGSDWDM>default</FSDW_SJGSDWDM>
+        <FSDW_SJGSDWMC>default</FSDW_SJGSDWMC>
+        <JSDW_SJGSDWDM>default</JSDW_SJGSDWDM>
+        <JSDW_SJGSDWMC>default</JSDW_SJGSDWMC>
+    </DATA>
+</PACKAGE>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--补发信息Mybatis持久层映射-->
+<mapper namespace="com.zhidao.kstb.dao.ReplacementDao">
+	<update id="changeSQQCInfoSuccess" parameterType="com.zhidao.kstb.model.tab.KSTB_SQQCXX_FS">
+		UPDATE
+		KSTB_SQQCXX_FS
+		SET
+		CODE='10'
+		,
+		MSG='成功'
+		WHERE
+		YWXTBH=#{ywxtbh,jdbcType=VARCHAR}
+		AND
+		QYR_GMSFHM=#{qyrGmsfhm,jdbcType=VARCHAR}
+	</update>
+	<update id="changeQCFKInfoSuccess" parameterType="com.zhidao.kstb.model.tab.KSTB_QCFKXX_FS">
+		UPDATE
+		KSTB_QCFKXX_FS
+		SET
+		CODE='10',
+		MSG='成功'
+		WHERE
+		ywxtbh=#{ywxtbh,jdbcType=VARCHAR}
+		AND CODE!=10
+	</update>
+	<update id="changeBYQCFKInfoSuccess" parameterType="com.zhidao.kstb.model.tab.KSTB_BYQCFKXX_FS">
+		UPDATE
+		KSTB_BYQCFKXX_FS
+		SET
+		CODE='10',
+		MSG='成功'
+	</update>
+	<select id="existOfSuccess" resultType="java.lang.Integer">
+		SELECT
+		COUNT(1)
+		FROM
+		KSTB_SQQCXX_FS
+		WHERE
+		CODE!='10'
+		AND
+		YWXTBH=#{ywxtbh,jdbcType=VARCHAR}
+		AND
+		QYR_GMSFHM=#{qyrGmsfhm,jdbcType=VARCHAR}
+	</select>
+	<select id="existOfUnSuccessFromQCFKInfo" resultType="java.lang.Integer">
+		SELECT
+		COUNT(1)
+		FROM
+		KSTB_QCFKXX_FS
+		WHERE
+		CODE!='10'
+		AND
+		ywxtbh=#{ywxtbh,jdbcType=VARCHAR}
+	</select>
+	<select id="existOfUnSuccessFromBYQCFKInfo" resultType="java.lang.Integer">
+		SELECT
+		COUNT(1)
+		FROM
+		KSTB_BYQCFKXX_FS
+		WHERE
+		CODE!='10'
+		AND
+		YWXTBH=#{ywxtbh,jdbcType=VARCHAR}
+	</select>
+</mapper>

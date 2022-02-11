@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhidao.kstb.shqffkjs.dao.Kstb_sfz_shqffkxxDao">
+    <resultMap id="BaseResultMap" type="com.zhidao.kstb.shqffkjs.model.req.ShqfRecord">
+        <id column="ID" jdbcType="VARCHAR" property="ID"/>
+        <result column="YWXTBH" jdbcType="VARCHAR" property="YWXTBH"/>
+        <result column="JMSFZSLH" jdbcType="VARCHAR" property="JMSFZSLH"/>
+        <result column="GMSFHM" jdbcType="VARCHAR" property="GMSFHM"/>
+        <result column="XM" jdbcType="VARCHAR" property="XM"/>
+        <result column="SHDW_GAJGJGDM" jdbcType="VARCHAR" property="SHDW_GAJGJGDM"/>
+        <result column="SHDW_GAJGJGMC" jdbcType="VARCHAR" property="SHDW_GAJGJGMC"/>
+        <result column="SHDW_LXDH" jdbcType="VARCHAR" property="SHDW_LXDH"/>
+        <result column="SHR_GMSFHM" jdbcType="VARCHAR" property="SHR_GMSFHM"/>
+        <result column="SHR_XM" jdbcType="VARCHAR" property="SHR_XM"/>
+        <result column="SHR_LXDH" jdbcType="VARCHAR" property="SHR_LXDH"/>
+        <result column="JMSFZSHJGDM" jdbcType="VARCHAR" property="JMSFZSHJGDM"/>
+        <result column="SHJG_JYQK" jdbcType="VARCHAR" property="SHJG_JYQK"/>
+        <result column="SHRQ" jdbcType="VARCHAR" property="SHRQ"/>
+        <result column="QFJG_GAJGDM" jdbcType="VARCHAR" property="QFJG_GAJGDM"/>
+        <result column="QFJG_GAJGMC" jdbcType="VARCHAR" property="QFJG_GAJGMC"/>
+        <result column="QFJG_LXDH" jdbcType="VARCHAR" property="QFJG_LXDH"/>
+        <result column="QFR_XM" jdbcType="VARCHAR" property="QFR_XM"/>
+        <result column="QFRQ" jdbcType="VARCHAR" property="QFRQ"/>
+        <result column="XMMZWZ" jdbcType="VARCHAR" property="XMMZWZ"/>
+        <result column="XBMZWZ" jdbcType="VARCHAR" property="XBMZWZ"/>
+        <result column="MZMZWZ" jdbcType="VARCHAR" property="MZMZWZ"/>
+        <result column="ZZHYMZWZ" jdbcType="VARCHAR" property="ZZHYMZWZ"/>
+        <result column="ZZHEMZWZ" jdbcType="VARCHAR" property="ZZHEMZWZ"/>
+        <result column="ZZHSMZWZ" jdbcType="VARCHAR" property="ZZHSMZWZ"/>
+        <result column="QFJGMZWZ" jdbcType="VARCHAR" property="QFJGMZWZ"/>
+        <result column="XTYW_QYFWDM" jdbcType="VARCHAR" property="XTYW_QYFWDM"/>
+        <result column="FSDW_SJGSDWDM" jdbcType="VARCHAR" property="FSDW_SJGSDWDM"/>
+        <result column="FSDW_SJGSDWMC" jdbcType="VARCHAR" property="FSDW_SJGSDWMC"/>
+        <result column="JSDW_SJGSDWDM" jdbcType="VARCHAR" property="JSDW_SJGSDWDM"/>
+        <result column="JSDW_SJGSDWMC" jdbcType="VARCHAR" property="JSDW_SJGSDWMC"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        ID, YWXTBH, JMSFZSLH, GMSFHM, XM, SHDW_GAJGJGDM, SHDW_GAJGJGMC, SHDW_LXDH, SHR_GMSFHM,
+        SHR_XM, SHR_LXDH, JMSFZSHJGDM, SHJG_JYQK, SHRQ, QFJG_GAJGDM, QFJG_GAJGMC, QFJG_LXDH,
+        QFR_XM, QFRQ, XMMZWZ, XBMZWZ, MZMZWZ, ZZHYMZWZ, ZZHEMZWZ, ZZHSMZWZ, QFJGMZWZ, XTYW_QYFWDM,
+        FSDW_SJGSDWDM, FSDW_SJGSDWMC, JSDW_SJGSDWDM, JSDW_SJGSDWMC
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from KSTB_SFZ_SHQFFKXX
+        where ID = #{ID,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+        delete from KSTB_SFZ_SHQFFKXX
+        where ID = #{ID,jdbcType=VARCHAR}
+    </delete>
+    <insert id="insert" parameterType="com.zhidao.kstb.shqffkjs.model.req.ShqfRecord">
+        insert into KSTB_SFZ_SHQFFKXX (ID, YWXTBH, JMSFZSLH,
+        GMSFHM, XM, SHDW_GAJGJGDM,
+        SHDW_GAJGJGMC, SHDW_LXDH, SHR_GMSFHM,
+        SHR_XM, SHR_LXDH, JMSFZSHJGDM,
+        SHJG_JYQK, SHRQ, QFJG_GAJGDM,
+        QFJG_GAJGMC, QFJG_LXDH, QFR_XM,
+        QFRQ, XMMZWZ, XBMZWZ,
+        MZMZWZ, ZZHYMZWZ, ZZHEMZWZ,
+        ZZHSMZWZ, QFJGMZWZ, XTYW_QYFWDM,
+        FSDW_SJGSDWDM, FSDW_SJGSDWMC, JSDW_SJGSDWDM,
+        JSDW_SJGSDWMC)
+        values (#{ID,jdbcType=VARCHAR}, #{YWXTBH,jdbcType=VARCHAR}, #{JMSFZSLH,jdbcType=VARCHAR},
+        #{GMSFHM,jdbcType=VARCHAR}, #{XM,jdbcType=VARCHAR}, #{SHDW_GAJGJGDM,jdbcType=VARCHAR},
+        #{SHDW_GAJGJGMC,jdbcType=VARCHAR}, #{SHDW_LXDH,jdbcType=VARCHAR}, #{SHR_GMSFHM,jdbcType=VARCHAR},
+        #{SHR_XM,jdbcType=VARCHAR}, #{SHR_LXDH,jdbcType=VARCHAR}, #{JMSFZSHJGDM,jdbcType=VARCHAR},
+        #{SHJG_JYQK,jdbcType=VARCHAR}, to_date(#{SHRQ,jdbcType=VARCHAR},'yyyyMMdd'), #{QFJG_GAJGDM,jdbcType=VARCHAR},
+        #{QFJG_GAJGMC,jdbcType=VARCHAR}, #{QFJG_LXDH,jdbcType=VARCHAR}, #{QFR_XM,jdbcType=VARCHAR},
+        to_date(#{QFRQ,jdbcType=VARCHAR},'yyyyMMdd'), #{XMMZWZ,jdbcType=VARCHAR}, #{XBMZWZ,jdbcType=VARCHAR},
+        #{MZMZWZ,jdbcType=VARCHAR}, #{ZZHYMZWZ,jdbcType=VARCHAR}, #{ZZHEMZWZ,jdbcType=VARCHAR},
+        #{ZZHSMZWZ,jdbcType=VARCHAR}, #{QFJGMZWZ,jdbcType=VARCHAR}, #{XTYW_QYFWDM,jdbcType=VARCHAR},
+        #{FSDW_SJGSDWDM,jdbcType=VARCHAR}, #{FSDW_SJGSDWMC,jdbcType=VARCHAR}, #{JSDW_SJGSDWDM,jdbcType=VARCHAR},
+        #{JSDW_SJGSDWMC,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.zhidao.kstb.shqffkjs.model.req.ShqfRecord">
+        insert into KSTB_SFZ_SHQFFKXX
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="ID != null">
+                ID,
+            </if>
+            <if test="YWXTBH != null">
+                YWXTBH,
+            </if>
+            <if test="JMSFZSLH != null">
+                JMSFZSLH,
+            </if>
+            <if test="GMSFHM != null">
+                GMSFHM,
+            </if>
+            <if test="XM != null">
+                XM,
+            </if>
+            <if test="SHDW_GAJGJGDM != null">
+                SHDW_GAJGJGDM,
+            </if>
+            <if test="SHDW_GAJGJGMC != null">
+                SHDW_GAJGJGMC,
+            </if>
+            <if test="SHDW_LXDH != null">
+                SHDW_LXDH,
+            </if>
+            <if test="SHR_GMSFHM != null">
+                SHR_GMSFHM,
+            </if>
+            <if test="SHR_XM != null">
+                SHR_XM,
+            </if>
+            <if test="SHR_LXDH != null">
+                SHR_LXDH,
+            </if>
+            <if test="JMSFZSHJGDM != null">
+                JMSFZSHJGDM,
+            </if>
+            <if test="SHJG_JYQK != null">
+                SHJG_JYQK,
+            </if>
+            <if test="SHRQ != null">
+                SHRQ,
+            </if>
+            <if test="QFJG_GAJGDM != null">
+                QFJG_GAJGDM,
+            </if>
+            <if test="QFJG_GAJGMC != null">
+                QFJG_GAJGMC,
+            </if>
+            <if test="QFJG_LXDH != null">
+                QFJG_LXDH,
+            </if>
+            <if test="QFR_XM != null">
+                QFR_XM,
+            </if>
+            <if test="QFRQ != null">
+                QFRQ,
+            </if>
+            <if test="XMMZWZ != null">
+                XMMZWZ,
+            </if>
+            <if test="XBMZWZ != null">
+                XBMZWZ,
+            </if>
+            <if test="MZMZWZ != null">
+                MZMZWZ,
+            </if>
+            <if test="ZZHYMZWZ != null">
+                ZZHYMZWZ,
+            </if>
+            <if test="ZZHEMZWZ != null">
+                ZZHEMZWZ,
+            </if>
+            <if test="ZZHSMZWZ != null">
+                ZZHSMZWZ,
+            </if>
+            <if test="QFJGMZWZ != null">
+                QFJGMZWZ,
+            </if>
+            <if test="XTYW_QYFWDM != null">
+                XTYW_QYFWDM,
+            </if>
+            <if test="FSDW_SJGSDWDM != null">
+                FSDW_SJGSDWDM,
+            </if>
+            <if test="FSDW_SJGSDWMC != null">
+                FSDW_SJGSDWMC,
+            </if>
+            <if test="JSDW_SJGSDWDM != null">
+                JSDW_SJGSDWDM,
+            </if>
+            <if test="JSDW_SJGSDWMC != null">
+                JSDW_SJGSDWMC,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="ID != null">
+                #{ID,jdbcType=VARCHAR},
+            </if>
+            <if test="YWXTBH != null">
+                #{YWXTBH,jdbcType=VARCHAR},
+            </if>
+            <if test="JMSFZSLH != null">
+                #{JMSFZSLH,jdbcType=VARCHAR},
+            </if>
+            <if test="GMSFHM != null">
+                #{GMSFHM,jdbcType=VARCHAR},
+            </if>
+            <if test="XM != null">
+                #{XM,jdbcType=VARCHAR},
+            </if>
+            <if test="SHDW_GAJGJGDM != null">
+                #{SHDW_GAJGJGDM,jdbcType=VARCHAR},
+            </if>
+            <if test="SHDW_GAJGJGMC != null">
+                #{SHDW_GAJGJGMC,jdbcType=VARCHAR},
+            </if>
+            <if test="SHDW_LXDH != null">
+                #{SHDW_LXDH,jdbcType=VARCHAR},
+            </if>
+            <if test="SHR_GMSFHM != null">
+                #{SHR_GMSFHM,jdbcType=VARCHAR},
+            </if>
+            <if test="SHR_XM != null">
+                #{SHR_XM,jdbcType=VARCHAR},
+            </if>
+            <if test="SHR_LXDH != null">
+                #{SHR_LXDH,jdbcType=VARCHAR},
+            </if>
+            <if test="JMSFZSHJGDM != null">
+                #{JMSFZSHJGDM,jdbcType=VARCHAR},
+            </if>
+            <if test="SHJG_JYQK != null">
+                #{SHJG_JYQK,jdbcType=VARCHAR},
+            </if>
+            <if test="SHRQ != null">
+                to_date(#{SHRQ,jdbcType=VARCHAR},'yyyyMMdd'),
+            </if>
+            <if test="QFJG_GAJGDM != null">
+                #{QFJG_GAJGDM,jdbcType=VARCHAR},
+            </if>
+            <if test="QFJG_GAJGMC != null">
+                #{QFJG_GAJGMC,jdbcType=VARCHAR},
+            </if>
+            <if test="QFJG_LXDH != null">
+                #{QFJG_LXDH,jdbcType=VARCHAR},
+            </if>
+            <if test="QFR_XM != null">
+                #{QFR_XM,jdbcType=VARCHAR},
+            </if>
+            <if test="QFRQ != null">
+                to_date(#{QFRQ,jdbcType=VARCHAR},'yyyyMMdd'),
+            </if>
+            <if test="XMMZWZ != null">
+                #{XMMZWZ,jdbcType=VARCHAR},
+            </if>
+            <if test="XBMZWZ != null">
+                #{XBMZWZ,jdbcType=VARCHAR},
+            </if>
+            <if test="MZMZWZ != null">
+                #{MZMZWZ,jdbcType=VARCHAR},
+            </if>
+            <if test="ZZHYMZWZ != null">
+                #{ZZHYMZWZ,jdbcType=VARCHAR},
+            </if>
+            <if test="ZZHEMZWZ != null">
+                #{ZZHEMZWZ,jdbcType=VARCHAR},
+            </if>
+            <if test="ZZHSMZWZ != null">
+                #{ZZHSMZWZ,jdbcType=VARCHAR},
+            </if>
+            <if test="QFJGMZWZ != null">
+                #{QFJGMZWZ,jdbcType=VARCHAR},
+            </if>
+            <if test="XTYW_QYFWDM != null">
+                #{XTYW_QYFWDM,jdbcType=VARCHAR},
+            </if>
+            <if test="FSDW_SJGSDWDM != null">
+                #{FSDW_SJGSDWDM,jdbcType=VARCHAR},
+            </if>
+            <if test="FSDW_SJGSDWMC != null">
+                #{FSDW_SJGSDWMC,jdbcType=VARCHAR},
+            </if>
+            <if test="JSDW_SJGSDWDM != null">
+                #{JSDW_SJGSDWDM,jdbcType=VARCHAR},
+            </if>
+            <if test="JSDW_SJGSDWMC != null">
+                #{JSDW_SJGSDWMC,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.zhidao.kstb.shqffkjs.model.req.ShqfRecord">
+        update KSTB_SFZ_SHQFFKXX
+        <set>
+            <if test="YWXTBH != null">
+                YWXTBH = #{YWXTBH,jdbcType=VARCHAR},
+            </if>
+            <if test="JMSFZSLH != null">
+                JMSFZSLH = #{JMSFZSLH,jdbcType=VARCHAR},
+            </if>
+            <if test="GMSFHM != null">
+                GMSFHM = #{GMSFHM,jdbcType=VARCHAR},
+            </if>
+            <if test="XM != null">
+                XM = #{XM,jdbcType=VARCHAR},
+            </if>
+            <if test="SHDW_GAJGJGDM != null">
+                SHDW_GAJGJGDM = #{SHDW_GAJGJGDM,jdbcType=VARCHAR},
+            </if>
+            <if test="SHDW_GAJGJGMC != null">
+                SHDW_GAJGJGMC = #{SHDW_GAJGJGMC,jdbcType=VARCHAR},
+            </if>
+            <if test="SHDW_LXDH != null">
+                SHDW_LXDH = #{SHDW_LXDH,jdbcType=VARCHAR},
+            </if>
+            <if test="SHR_GMSFHM != null">
+                SHR_GMSFHM = #{SHR_GMSFHM,jdbcType=VARCHAR},
+            </if>
+            <if test="SHR_XM != null">
+                SHR_XM = #{SHR_XM,jdbcType=VARCHAR},
+            </if>
+            <if test="SHR_LXDH != null">
+                SHR_LXDH = #{SHR_LXDH,jdbcType=VARCHAR},
+            </if>
+            <if test="JMSFZSHJGDM != null">
+                JMSFZSHJGDM = #{JMSFZSHJGDM,jdbcType=VARCHAR},
+            </if>
+            <if test="SHJG_JYQK != null">
+                SHJG_JYQK = #{SHJG_JYQK,jdbcType=VARCHAR},
+            </if>
+            <if test="SHRQ != null">
+                SHRQ = to_date(#{SHRQ,jdbcType=VARCHAR},'yyyyMMdd'),
+            </if>
+            <if test="QFJG_GAJGDM != null">
+                QFJG_GAJGDM = #{QFJG_GAJGDM,jdbcType=VARCHAR},
+            </if>
+            <if test="QFJG_GAJGMC != null">
+                QFJG_GAJGMC = #{QFJG_GAJGMC,jdbcType=VARCHAR},
+            </if>
+            <if test="QFJG_LXDH != null">
+                QFJG_LXDH = #{QFJG_LXDH,jdbcType=VARCHAR},
+            </if>
+            <if test="QFR_XM != null">
+                QFR_XM = #{QFR_XM,jdbcType=VARCHAR},
+            </if>
+            <if test="QFRQ != null">
+                QFRQ = to_date(#{QFRQ,jdbcType=VARCHAR},'yyyyMMdd'),
+            </if>
+            <if test="XMMZWZ != null">
+                XMMZWZ = #{XMMZWZ,jdbcType=VARCHAR},
+            </if>
+            <if test="XBMZWZ != null">
+                XBMZWZ = #{XBMZWZ,jdbcType=VARCHAR},
+            </if>
+            <if test="MZMZWZ != null">
+                MZMZWZ = #{MZMZWZ,jdbcType=VARCHAR},
+            </if>
+            <if test="ZZHYMZWZ != null">
+                ZZHYMZWZ = #{ZZHYMZWZ,jdbcType=VARCHAR},
+            </if>
+            <if test="ZZHEMZWZ != null">
+                ZZHEMZWZ = #{ZZHEMZWZ,jdbcType=VARCHAR},
+            </if>
+            <if test="ZZHSMZWZ != null">
+                ZZHSMZWZ = #{ZZHSMZWZ,jdbcType=VARCHAR},
+            </if>
+            <if test="QFJGMZWZ != null">
+                QFJGMZWZ = #{QFJGMZWZ,jdbcType=VARCHAR},
+            </if>
+            <if test="XTYW_QYFWDM != null">
+                XTYW_QYFWDM = #{XTYW_QYFWDM,jdbcType=VARCHAR},
+            </if>
+            <if test="FSDW_SJGSDWDM != null">
+                FSDW_SJGSDWDM = #{FSDW_SJGSDWDM,jdbcType=VARCHAR},
+            </if>
+            <if test="FSDW_SJGSDWMC != null">
+                FSDW_SJGSDWMC = #{FSDW_SJGSDWMC,jdbcType=VARCHAR},
+            </if>
+            <if test="JSDW_SJGSDWDM != null">
+                JSDW_SJGSDWDM = #{JSDW_SJGSDWDM,jdbcType=VARCHAR},
+            </if>
+            <if test="JSDW_SJGSDWMC != null">
+                JSDW_SJGSDWMC = #{JSDW_SJGSDWMC,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where ID = #{ID,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.zhidao.kstb.shqffkjs.model.req.ShqfRecord">
+        update KSTB_SFZ_SHQFFKXX
+        set YWXTBH = #{YWXTBH,jdbcType=VARCHAR},
+        JMSFZSLH = #{JMSFZSLH,jdbcType=VARCHAR},
+        GMSFHM = #{GMSFHM,jdbcType=VARCHAR},
+        XM = #{XM,jdbcType=VARCHAR},
+        SHDW_GAJGJGDM = #{SHDW_GAJGJGDM,jdbcType=VARCHAR},
+        SHDW_GAJGJGMC = #{SHDW_GAJGJGMC,jdbcType=VARCHAR},
+        SHDW_LXDH = #{SHDW_LXDH,jdbcType=VARCHAR},
+        SHR_GMSFHM = #{SHR_GMSFHM,jdbcType=VARCHAR},
+        SHR_XM = #{SHR_XM,jdbcType=VARCHAR},
+        SHR_LXDH = #{SHR_LXDH,jdbcType=VARCHAR},
+        JMSFZSHJGDM = #{JMSFZSHJGDM,jdbcType=VARCHAR},
+        SHJG_JYQK = #{SHJG_JYQK,jdbcType=VARCHAR},
+        SHRQ = to_date(#{SHRQ,jdbcType=VARCHAR},'yyyyMMdd'),
+        QFJG_GAJGDM = #{QFJG_GAJGDM,jdbcType=VARCHAR},
+        QFJG_GAJGMC = #{QFJG_GAJGMC,jdbcType=VARCHAR},
+        QFJG_LXDH = #{QFJG_LXDH,jdbcType=VARCHAR},
+        QFR_XM = #{QFR_XM,jdbcType=VARCHAR},
+        QFRQ = to_date(#{QFRQ,jdbcType=VARCHAR},'yyyyMMdd'),
+        XMMZWZ = #{XMMZWZ,jdbcType=VARCHAR},
+        XBMZWZ = #{XBMZWZ,jdbcType=VARCHAR},
+        MZMZWZ = #{MZMZWZ,jdbcType=VARCHAR},
+        ZZHYMZWZ = #{ZZHYMZWZ,jdbcType=VARCHAR},
+        ZZHEMZWZ = #{ZZHEMZWZ,jdbcType=VARCHAR},
+        ZZHSMZWZ = #{ZZHSMZWZ,jdbcType=VARCHAR},
+        QFJGMZWZ = #{QFJGMZWZ,jdbcType=VARCHAR},
+        XTYW_QYFWDM = #{XTYW_QYFWDM,jdbcType=VARCHAR},
+        FSDW_SJGSDWDM = #{FSDW_SJGSDWDM,jdbcType=VARCHAR},
+        FSDW_SJGSDWMC = #{FSDW_SJGSDWMC,jdbcType=VARCHAR},
+        JSDW_SJGSDWDM = #{JSDW_SJGSDWDM,jdbcType=VARCHAR},
+        JSDW_SJGSDWMC = #{JSDW_SJGSDWMC,jdbcType=VARCHAR}
+        where ID = #{ID,jdbcType=VARCHAR}
+    </update>
+</mapper>

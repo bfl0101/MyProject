@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhidao.kstb.shqffkjs.dao.Rk_zpxxDao">
+  <resultMap id="BaseResultMap" type="com.zhidao.kstb.shqffkjs.model.Rk_zpxx">
+    <id column="XLH" jdbcType="NUMERIC" property="XLH" />
+    <result column="SLSJ" jdbcType="TIMESTAMP" property="SLSJ" />
+    <result column="DQM" jdbcType="CHAR" property="DQM" />
+    <result column="GMSFHM" jdbcType="VARCHAR" property="GMSFHM" />
+    <result column="SJGSDWDM" jdbcType="VARCHAR" property="SJGSDWDM" />
+    <result column="GXSJ" jdbcType="TIMESTAMP" property="GXSJ" />
+    <result column="ZXSJ" jdbcType="TIMESTAMP" property="ZXSJ" />
+    <result column="PCSDM" jdbcType="VARCHAR" property="PCSDM" />
+    <result column="RKXLH" jdbcType="NUMERIC" property="RKXLH" />
+    <result column="SYS_WRITE" jdbcType="NUMERIC" property="SYS_WRITE" />
+    <result column="DSXLH" jdbcType="VARCHAR" property="DSXLH" />
+    <result column="ZT" jdbcType="NUMERIC" property="ZT" />
+    <result column="XPLX" jdbcType="VARCHAR" property="XPLX" />
+    <result column="RYID" jdbcType="VARCHAR" property="RYID" />
+    <result column="XM" jdbcType="NVARCHAR" property="XM" />
+    <result column="CJSJ" jdbcType="VARCHAR" property="CJSJ" />
+    <result column="SSSSX" jdbcType="VARCHAR" property="SSSSX" />
+    <result column="TXH" jdbcType="VARCHAR" property="TXH" />
+    <result column="XPCD" jdbcType="NUMERIC" property="XPCD" />
+    <result column="SLH" jdbcType="VARCHAR" property="SLH" />
+    <result column="SERIAL_NO" jdbcType="VARCHAR" property="SERIAL_NO" />
+    <result column="RKLB" jdbcType="VARCHAR" property="RKLB" />
+    <result column="XPSLH" jdbcType="VARCHAR" property="XPSLH" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.zhidao.kstb.shqffkjs.model.Rk_zpxx">
+    <result column="XP" jdbcType="BLOB" property="XP" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    XLH, SLSJ, DQM, GMSFHM, SJGSDWDM, GXSJ, ZXSJ, PCSDM, RKXLH, SYS_WRITE, DSXLH, ZT, 
+    XPLX, RYID, XM, CJSJ, SSSSX, TXH, XPCD, SLH, SERIAL_NO, RKLB, XPSLH
+  </sql>
+  <sql id="Blob_Column_List">
+    XP
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from RK_ZPXX
+    where XLH = #{XLH,jdbcType=NUMERIC}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from RK_ZPXX
+    where XLH = #{XLH,jdbcType=NUMERIC}
+  </delete>
+  <insert id="insert" parameterType="com.zhidao.kstb.shqffkjs.model.Rk_zpxx">
+    insert into RK_ZPXX (XLH, SLSJ, DQM, 
+      GMSFHM, SJGSDWDM, GXSJ, 
+      ZXSJ, PCSDM, RKXLH, 
+      SYS_WRITE, DSXLH, ZT, 
+      XPLX, RYID, XM, CJSJ, 
+      SSSSX, TXH, XPCD, SLH, 
+      SERIAL_NO, RKLB, XPSLH, 
+      XP)
+    values (#{XLH,jdbcType=NUMERIC}, #{SLSJ,jdbcType=TIMESTAMP}, #{DQM,jdbcType=CHAR}, 
+      #{GMSFHM,jdbcType=VARCHAR}, #{SJGSDWDM,jdbcType=VARCHAR}, #{GXSJ,jdbcType=TIMESTAMP}, 
+      #{ZXSJ,jdbcType=TIMESTAMP}, #{PCSDM,jdbcType=VARCHAR}, #{RKXLH,jdbcType=NUMERIC}, 
+      #{SYS_WRITE,jdbcType=NUMERIC}, #{DSXLH,jdbcType=VARCHAR}, #{ZT,jdbcType=NUMERIC}, 
+      #{XPLX,jdbcType=VARCHAR}, #{RYID,jdbcType=VARCHAR}, #{XM,jdbcType=NVARCHAR}, #{CJSJ,jdbcType=VARCHAR}, 
+      #{SSSSX,jdbcType=VARCHAR}, #{TXH,jdbcType=VARCHAR}, #{XPCD,jdbcType=NUMERIC}, #{SLH,jdbcType=VARCHAR}, 
+      #{SERIAL_NO,jdbcType=VARCHAR}, #{RKLB,jdbcType=VARCHAR}, #{XPSLH,jdbcType=VARCHAR}, 
+      #{XP,jdbcType=BLOB})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhidao.kstb.shqffkjs.model.Rk_zpxx">
+    insert into RK_ZPXX
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="XLH != null">
+        XLH,
+      </if>
+      <if test="SLSJ != null">
+        SLSJ,
+      </if>
+      <if test="DQM != null">
+        DQM,
+      </if>
+      <if test="GMSFHM != null">
+        GMSFHM,
+      </if>
+      <if test="SJGSDWDM != null">
+        SJGSDWDM,
+      </if>
+      <if test="GXSJ != null">
+        GXSJ,
+      </if>
+      <if test="ZXSJ != null">
+        ZXSJ,
+      </if>
+      <if test="PCSDM != null">
+        PCSDM,
+      </if>
+      <if test="RKXLH != null">
+        RKXLH,
+      </if>
+      <if test="SYS_WRITE != null">
+        SYS_WRITE,
+      </if>
+      <if test="DSXLH != null">
+        DSXLH,
+      </if>
+      <if test="ZT != null">
+        ZT,
+      </if>
+      <if test="XPLX != null">
+        XPLX,
+      </if>
+      <if test="RYID != null">
+        RYID,
+      </if>
+      <if test="XM != null">
+        XM,
+      </if>
+      <if test="CJSJ != null">
+        CJSJ,
+      </if>
+      <if test="SSSSX != null">
+        SSSSX,
+      </if>
+      <if test="TXH != null">
+        TXH,
+      </if>
+      <if test="XPCD != null">
+        XPCD,
+      </if>
+      <if test="SLH != null">
+        SLH,
+      </if>
+      <if test="SERIAL_NO != null">
+        SERIAL_NO,
+      </if>
+      <if test="RKLB != null">
+        RKLB,
+      </if>
+      <if test="XPSLH != null">
+        XPSLH,
+      </if>
+      <if test="XP != null">
+        XP,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="XLH != null">
+        #{XLH,jdbcType=NUMERIC},
+      </if>
+      <if test="SLSJ != null">
+        #{SLSJ,jdbcType=TIMESTAMP},
+      </if>
+      <if test="DQM != null">
+        #{DQM,jdbcType=CHAR},
+      </if>
+      <if test="GMSFHM != null">
+        #{GMSFHM,jdbcType=VARCHAR},
+      </if>
+      <if test="SJGSDWDM != null">
+        #{SJGSDWDM,jdbcType=VARCHAR},
+      </if>
+      <if test="GXSJ != null">
+        #{GXSJ,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ZXSJ != null">
+        #{ZXSJ,jdbcType=TIMESTAMP},
+      </if>
+      <if test="PCSDM != null">
+        #{PCSDM,jdbcType=VARCHAR},
+      </if>
+      <if test="RKXLH != null">
+        #{RKXLH,jdbcType=NUMERIC},
+      </if>
+      <if test="SYS_WRITE != null">
+        #{SYS_WRITE,jdbcType=NUMERIC},
+      </if>
+      <if test="DSXLH != null">
+        #{DSXLH,jdbcType=VARCHAR},
+      </if>
+      <if test="ZT != null">
+        #{ZT,jdbcType=NUMERIC},
+      </if>
+      <if test="XPLX != null">
+        #{XPLX,jdbcType=VARCHAR},
+      </if>
+      <if test="RYID != null">
+        #{RYID,jdbcType=VARCHAR},
+      </if>
+      <if test="XM != null">
+        #{XM,jdbcType=NVARCHAR},
+      </if>
+      <if test="CJSJ != null">
+        #{CJSJ,jdbcType=VARCHAR},
+      </if>
+      <if test="SSSSX != null">
+        #{SSSSX,jdbcType=VARCHAR},
+      </if>
+      <if test="TXH != null">
+        #{TXH,jdbcType=VARCHAR},
+      </if>
+      <if test="XPCD != null">
+        #{XPCD,jdbcType=NUMERIC},
+      </if>
+      <if test="SLH != null">
+        #{SLH,jdbcType=VARCHAR},
+      </if>
+      <if test="SERIAL_NO != null">
+        #{SERIAL_NO,jdbcType=VARCHAR},
+      </if>
+      <if test="RKLB != null">
+        #{RKLB,jdbcType=VARCHAR},
+      </if>
+      <if test="XPSLH != null">
+        #{XPSLH,jdbcType=VARCHAR},
+      </if>
+      <if test="XP != null">
+        #{XP,jdbcType=BLOB},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhidao.kstb.shqffkjs.model.Rk_zpxx">
+    update RK_ZPXX
+    <set>
+      <if test="SLSJ != null">
+        SLSJ = #{SLSJ,jdbcType=TIMESTAMP},
+      </if>
+      <if test="DQM != null">
+        DQM = #{DQM,jdbcType=CHAR},
+      </if>
+      <if test="GMSFHM != null">
+        GMSFHM = #{GMSFHM,jdbcType=VARCHAR},
+      </if>
+      <if test="SJGSDWDM != null">
+        SJGSDWDM = #{SJGSDWDM,jdbcType=VARCHAR},
+      </if>
+      <if test="GXSJ != null">
+        GXSJ = #{GXSJ,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ZXSJ != null">
+        ZXSJ = #{ZXSJ,jdbcType=TIMESTAMP},
+      </if>
+      <if test="PCSDM != null">
+        PCSDM = #{PCSDM,jdbcType=VARCHAR},
+      </if>
+      <if test="RKXLH != null">
+        RKXLH = #{RKXLH,jdbcType=NUMERIC},
+      </if>
+      <if test="SYS_WRITE != null">
+        SYS_WRITE = #{SYS_WRITE,jdbcType=NUMERIC},
+      </if>
+      <if test="DSXLH != null">
+        DSXLH = #{DSXLH,jdbcType=VARCHAR},
+      </if>
+      <if test="ZT != null">
+        ZT = #{ZT,jdbcType=NUMERIC},
+      </if>
+      <if test="XPLX != null">
+        XPLX = #{XPLX,jdbcType=VARCHAR},
+      </if>
+      <if test="RYID != null">
+        RYID = #{RYID,jdbcType=VARCHAR},
+      </if>
+      <if test="XM != null">
+        XM = #{XM,jdbcType=NVARCHAR},
+      </if>
+      <if test="CJSJ != null">
+        CJSJ = #{CJSJ,jdbcType=VARCHAR},
+      </if>
+      <if test="SSSSX != null">
+        SSSSX = #{SSSSX,jdbcType=VARCHAR},
+      </if>
+      <if test="TXH != null">
+        TXH = #{TXH,jdbcType=VARCHAR},
+      </if>
+      <if test="XPCD != null">
+        XPCD = #{XPCD,jdbcType=NUMERIC},
+      </if>
+      <if test="SLH != null">
+        SLH = #{SLH,jdbcType=VARCHAR},
+      </if>
+      <if test="SERIAL_NO != null">
+        SERIAL_NO = #{SERIAL_NO,jdbcType=VARCHAR},
+      </if>
+      <if test="RKLB != null">
+        RKLB = #{RKLB,jdbcType=VARCHAR},
+      </if>
+      <if test="XPSLH != null">
+        XPSLH = #{XPSLH,jdbcType=VARCHAR},
+      </if>
+      <if test="XP != null">
+        XP = #{XP,jdbcType=BLOB},
+      </if>
+    </set>
+    where XLH = #{XLH,jdbcType=NUMERIC}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.zhidao.kstb.shqffkjs.model.Rk_zpxx">
+    update RK_ZPXX
+    set SLSJ = #{SLSJ,jdbcType=TIMESTAMP},
+      DQM = #{DQM,jdbcType=CHAR},
+      GMSFHM = #{GMSFHM,jdbcType=VARCHAR},
+      SJGSDWDM = #{SJGSDWDM,jdbcType=VARCHAR},
+      GXSJ = #{GXSJ,jdbcType=TIMESTAMP},
+      ZXSJ = #{ZXSJ,jdbcType=TIMESTAMP},
+      PCSDM = #{PCSDM,jdbcType=VARCHAR},
+      RKXLH = #{RKXLH,jdbcType=NUMERIC},
+      SYS_WRITE = #{SYS_WRITE,jdbcType=NUMERIC},
+      DSXLH = #{DSXLH,jdbcType=VARCHAR},
+      ZT = #{ZT,jdbcType=NUMERIC},
+      XPLX = #{XPLX,jdbcType=VARCHAR},
+      RYID = #{RYID,jdbcType=VARCHAR},
+      XM = #{XM,jdbcType=NVARCHAR},
+      CJSJ = #{CJSJ,jdbcType=VARCHAR},
+      SSSSX = #{SSSSX,jdbcType=VARCHAR},
+      TXH = #{TXH,jdbcType=VARCHAR},
+      XPCD = #{XPCD,jdbcType=NUMERIC},
+      SLH = #{SLH,jdbcType=VARCHAR},
+      SERIAL_NO = #{SERIAL_NO,jdbcType=VARCHAR},
+      RKLB = #{RKLB,jdbcType=VARCHAR},
+      XPSLH = #{XPSLH,jdbcType=VARCHAR},
+      XP = #{XP,jdbcType=BLOB}
+    where XLH = #{XLH,jdbcType=NUMERIC}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhidao.kstb.shqffkjs.model.Rk_zpxx">
+    update RK_ZPXX
+    set SLSJ = #{SLSJ,jdbcType=TIMESTAMP},
+      DQM = #{DQM,jdbcType=CHAR},
+      GMSFHM = #{GMSFHM,jdbcType=VARCHAR},
+      SJGSDWDM = #{SJGSDWDM,jdbcType=VARCHAR},
+      GXSJ = #{GXSJ,jdbcType=TIMESTAMP},
+      ZXSJ = #{ZXSJ,jdbcType=TIMESTAMP},
+      PCSDM = #{PCSDM,jdbcType=VARCHAR},
+      RKXLH = #{RKXLH,jdbcType=NUMERIC},
+      SYS_WRITE = #{SYS_WRITE,jdbcType=NUMERIC},
+      DSXLH = #{DSXLH,jdbcType=VARCHAR},
+      ZT = #{ZT,jdbcType=NUMERIC},
+      XPLX = #{XPLX,jdbcType=VARCHAR},
+      RYID = #{RYID,jdbcType=VARCHAR},
+      XM = #{XM,jdbcType=NVARCHAR},
+      CJSJ = #{CJSJ,jdbcType=VARCHAR},
+      SSSSX = #{SSSSX,jdbcType=VARCHAR},
+      TXH = #{TXH,jdbcType=VARCHAR},
+      XPCD = #{XPCD,jdbcType=NUMERIC},
+      SLH = #{SLH,jdbcType=VARCHAR},
+      SERIAL_NO = #{SERIAL_NO,jdbcType=VARCHAR},
+      RKLB = #{RKLB,jdbcType=VARCHAR},
+      XPSLH = #{XPSLH,jdbcType=VARCHAR}
+    where XLH = #{XLH,jdbcType=NUMERIC}
+  </update>
+</mapper>
